@@ -2,10 +2,10 @@ include _variables
 
 mixin icon(iconName, iconClass)
 	svg(class=`${iconClass}`)&attributes(attributes)
-		use(xlink:href=`./assets/images/icons/sprite.svg#${iconName}`)
+		use(xlink:href=`assets/images/icons/sprite.svg#${iconName}`)
 
 mixin image(imagePath, imageAlt, imageClass)
-	img(src=`./assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+	img(src=`assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
 
 mixin socials(iconKind, elemClass)
 	ul.socials(class=`${elemClass}`)
