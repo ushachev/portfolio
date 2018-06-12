@@ -15,9 +15,9 @@ mixin socials(iconKind, elemClass)
 					+icon(social.name + iconKind, `socials__icon socials__icon_${social.name}`)&attributes(attributes)
 
 mixin nav(className, items)
-	nav.main-nav(class=`${className}__nav`)
-		ul.main-nav__list(class=`${className}__nav-list`)
+	nav(class=`${className}__nav`)
+		ul(class=`${className}__nav-list`)
 			each item in items
-				li.main-nav__item(class=`${className}__nav-item`)
-					a.main-nav__link(class=`${className}__nav-link`, href=`${item.url}`)= item.name
+				li(class=`${className}__nav-item`)
+					a(class=`${className}__nav-link`, href=`${item.url}`)= item.name
 

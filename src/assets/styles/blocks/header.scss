@@ -42,7 +42,7 @@
 		}
 	}
 
-	&__title {
+	&__info {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -76,7 +76,7 @@
 		}
 	}
 
-	&__title-page {
+	&__title {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -90,6 +90,10 @@
 		&::before {
 			background-image: svg-load('blog_header.svg', fill=#fff);
 		}
+	}
+
+	&__title-text {
+		@include marked;
 	}
 
 	&__subtitle {

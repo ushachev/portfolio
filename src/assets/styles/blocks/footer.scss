@@ -14,6 +14,10 @@
 		}
 	}
 
+	&__nav-list {
+		display: flex;
+	}
+
 	&__nav-item {
 
 		&:not(:last-child) {
@@ -22,6 +26,9 @@
 	}
 
 	&__nav-link {
+		font-weight: 500;
+		color: #fff;
+		text-decoration: none;
 
 		&:hover {
 			color: #00bfa5;
@@ -81,10 +88,6 @@
 		padding: 12px 0;
 		max-width: 45%;
 		color: rgba(#fff, .5);
-
-		&_left {
-			
-		}
 
 		&_right {
 			text-align: right;

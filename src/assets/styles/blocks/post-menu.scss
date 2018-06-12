@@ -10,10 +10,6 @@
 
 		&_active {
 			border-right: 3px solid #00bfa5;
-
-			.post-menu__link {
-				color: #00bfa5;
-			}
 		}
 	}
 
@@ -22,5 +18,10 @@
 		text-align: right;
 		text-decoration: none;
 		color: inherit;
+
+		&:hover,
+		.post-menu__item_active & {
+			color: #00bfa5;
+		}
 	}
 }

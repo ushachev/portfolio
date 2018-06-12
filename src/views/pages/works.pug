@@ -17,7 +17,7 @@ block content
 		svg.about__triangles-right(viewBox="0 0 600 110" preserveAspectRatio="none")
 			polygon(points="600,0 600,110 0,110")
 		h1.title.galery__title
-			span.marked-title-text Мои работы
+			span.galery__title-text Мои работы
 		-
 			var works = [
 				['preview-foto1.png',
@@ -44,8 +44,8 @@ block content
 			]
 		.galery__info
 			.galery__work-title
-				.galery__title-wrap
-					.galery__title-text #{works[1][2].title}
+				.galery__work-title-wrap
+					.galery__work-title-text #{works[1][2].title}
 			.galery__work-techn
 				.galery__techn-wrap
 					.galery__techn-text #{works[1][2].techn}
@@ -64,7 +64,7 @@ block content
 
 	section.reviews
 		h2.title.reviews__title
-			span.marked-title-text Что обо мне
+			span.reviews__title-text Что обо мне
 			span говорят
 		ul.reviews__list
 			li.reviews__item
@@ -87,8 +87,8 @@ block content
 						.review__author-position преподаватель
 		.review__form
 			form(action="#" method="post" id='review-form').review-form
-				h3.subtitle
-					span.marked-title-text Связаться со мной
+				h3.subtitle.review-form__subtitle
+					span.review-form__title-text Связаться со мной
 				label(for='name').visually-hidden Имя
 				input(type='text' id='name' name="name" placeholder="Имя").review-form__input-txt
 				label(for='name').visually-hidden Email

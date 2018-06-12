@@ -12,6 +12,7 @@ module.exports = {
       variables: require("./src/assets/styles/variables")
     }),
     require("math-calc"),
+    require("postcss-extend"),
     require("postcss-nested"),
     require("postcss-rgb"),
     require("postcss-inline-comment"),

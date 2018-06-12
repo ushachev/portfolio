@@ -35,17 +35,21 @@
 		height: 125px;
 		margin-bottom: 30px;
 
-		span {
+		&::before {
+			background-image: svg-load('about_header.svg', fill=#6d7070);
+		}
+	}
+
+	&__title-text {
+		@include marked;
+
+		&_with-bg {
 			padding-top: 27px;
 
 			&::before,
 			&::after {
 				margin-top: 11px;
 			}
-		}
-
-		&::before {
-			background-image: svg-load('about_header.svg', fill=#6d7070);
 		}
 	}
 
