@@ -1,0 +1,26 @@
+.post-menu {
+
+	&__item {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-bottom: 20px;
+		padding-right: 17px;
+		min-height: 40px;
+
+		&_active {
+			border-right: 3px solid #00bfa5;
+
+			.post-menu__link {
+				color: #00bfa5;
+			}
+		}
+	}
+
+	&__link {
+		line-height: 26px;
+		text-align: right;
+		text-decoration: none;
+		color: inherit;
+	}
+}

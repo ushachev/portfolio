@@ -1,0 +1,90 @@
+.about {
+	position: relative;
+	background-image: linear-gradient(to right, $white 50%, $beige 50%);
+
+	&__triangles-left {
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+		width: 50%;
+		height: 110px;
+		fill: $white;
+	}
+
+	&__triangles-right {
+		position: absolute;
+		bottom: 100%;
+		right: 0;
+		width: 50%;
+		height: 110px;
+		fill: $beige;
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+	}
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 357px;
+		height: 125px;
+		margin-bottom: 30px;
+
+		span {
+			padding-top: 27px;
+
+			&::before,
+			&::after {
+				margin-top: 11px;
+			}
+		}
+
+		&::before {
+			background-image: svg-load('about_header.svg', fill=#6d7070);
+		}
+	}
+
+	&__author-foto {
+		width: 446px;
+		height: 393px;
+		margin-bottom: 35px;
+	}
+
+	&__author-image {
+		object-fit: cover;
+	}
+
+	&__subtitle {
+		margin-bottom: 35px;
+	}
+
+	&__about-me {
+		max-width: 450px;
+
+		p {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 50px;
+		width: 50%;
+	}
+
+	&__subtitle {
+		text-align: center;
+	}
+
+	&__about-skills {
+		width: 89%;
+		margin-bottom: 50px;
+	}
+}

@@ -1,4 +1,5 @@
 include ./common/_mixins
+include ./common/_variables
 block variables
 
 doctype html
@@ -12,11 +13,13 @@ html(lang="ru")
     link(rel='stylesheet' href='main.min.css')
   body
     .wrapper
-      .maincontent
+      block header
+      main.maincontent
+
         block content
-
-      include ./common/footer.pug
-
-    script(src='bootloader.bundle.js')
-    script(src='vendor.bundle.js')
-    block scripts
+          
+      block footer
+  script(src='bootloader.bundle.js')
+  script(src='vendor.bundle.js')
+  block scripts
+    

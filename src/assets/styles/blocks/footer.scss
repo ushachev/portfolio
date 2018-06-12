@@ -1,0 +1,93 @@
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(grey, 0.85);
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&:first-child {
+			border-bottom: 1px solid rgba(#fff, .1);
+		}
+	}
+
+	&__nav-item {
+
+		&:not(:last-child) {
+			margin-right: 40px;
+		}
+	}
+
+	&__nav-link {
+
+		&:hover {
+			color: #00bfa5;
+		}
+	}
+
+	&__socials {
+		margin: 17px 0;
+
+		.socials__item {
+
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
+
+		.socials__link {
+			width: 34px;
+			height: 34px;
+			border: 1px solid rgba(#fff, 0.5);
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&:hover {
+				border-color: #fff;
+				background-color: #fff;
+
+				.socials__icon {
+					fill: rgba(grey, 0.99);
+				}
+			}
+		}
+
+		.socials__icon {
+			fill: rgba(#fff, .5);
+
+			&_vk {
+				width: 23px;
+				height: 13px;
+			}
+
+			&_github {
+				width: 20px;
+				height: 16px;
+			}
+
+			&_in {
+				width: 18px;
+				height: 16px;
+			}
+		}
+	}
+
+	&__cell {
+		padding: 12px 0;
+		max-width: 45%;
+		color: rgba(#fff, .5);
+
+		&_left {
+			
+		}
+
+		&_right {
+			text-align: right;
+		}
+	}	
+}
