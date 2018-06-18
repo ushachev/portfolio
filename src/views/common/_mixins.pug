@@ -1,6 +1,22 @@
+include _variables
+
 mixin icon(iconName, iconClass)
-  svg(class=`${iconClass}`)
-    use(xlink:href=`/assets/images/icons/sprite.svg#${iconName}`)
+	svg(class=`${iconClass}`)&attributes(attributes)
+		use(xlink:href=`assets/images/icons/sprite.svg#${iconName}`)
 
 mixin image(imagePath, imageAlt, imageClass)
-  img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+	img(src=`assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+mixin socials(iconKind, elemClass)
+	ul.socials(class=`${elemClass}`)
+		each social in socialItems
+			li.socials__item
+				a.socials__link(href=`${social.url}`, target="_blank")
+					+icon(social.name + iconKind, `socials__icon socials__icon_${social.name}`)&attributes(attributes)
+
+mixin nav(className, items)
+	nav(class=`${className}__nav`)
+		ul(class=`${className}__nav-list`)
+			each item in items
+				li(class=`${className}__nav-item`)
+					a(class=`${className}__nav-link`, href=`${item.url}`)= item.name

@@ -1,0 +1,21 @@
+.skills-row {
+	display: flex;
+	flex-direction: column;
+
+	&__title {
+		margin-bottom: 15px;
+		font-size: 28px;
+		font-weight: 500;
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+
+		&:not(:last-child) {
+			margin-right: 36px;
+		}
+	}
+}

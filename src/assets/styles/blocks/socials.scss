@@ -1,0 +1,12 @@
+.socials {
+	display: flex;
+
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+
+	&__icon {
+		fill: #fff;
+	}
+}

@@ -1,0 +1,23 @@
+@mixin marked {
+	position: relative;
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		width: 22px;
+		height: 6px;
+		top: 50%;
+		margin-top: -3px;
+		background-color: currentColor;
+		opacity: 0.2;
+	}
+
+	&::before {
+		left: -42px;
+	}
+
+	&::after {
+		right: -42px;
+	}
+}
