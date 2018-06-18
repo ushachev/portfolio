@@ -4,22 +4,26 @@ block variables
 
 doctype html
 html(lang="ru")
-  head
-    meta(charset="utf-8")
-    meta(content="ie=edge" http-equiv="x-ua-compatible")
-    meta(content="width=device-width, initial-scale=1" name="viewport")
-    
-    title Portfolio | #{title}
-    link(rel='stylesheet' href='main.min.css')
-  body
-    .wrapper
-      block header
-      main.maincontent
+	head
+		meta(charset="utf-8")
+		meta(content="ie=edge" http-equiv="x-ua-compatible")
+		meta(content="width=device-width, initial-scale=1" name="viewport")
+		
+		title Portfolio | #{title}
+		link(rel='stylesheet' href='main.min.css')
+	body
+		.wrapper
+			block header
+			main.maincontent
+				svg.maincontent__triangle-left(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangleLeft) ? ` maincontent__triangle-left_${modTriangleLeft}` : '')
+					polygon(points="0,0 0,110 600,110")
+				svg.maincontent__triangle-right(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangleRight) ? ` maincontent__triangle-right_${modTriangleRight}` : '')
+					polygon(points="600,0 600,110 0,110")
 
-        block content
-          
-      block footer
-  script(src='bootloader.bundle.js')
-  script(src='vendor.bundle.js')
-  block scripts
-    
+				block content
+
+			block footer
+	script(src='bootloader.bundle.js')
+	script(src='vendor.bundle.js')
+	block scripts
+		

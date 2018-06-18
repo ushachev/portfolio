@@ -2,24 +2,6 @@
 	position: relative;
 	background-image: linear-gradient(to right, $white 50%, $beige 50%);
 
-	&__triangles-left {
-		position: absolute;
-		bottom: 100%;
-		left: 0;
-		width: 50%;
-		height: 110px;
-		fill: $white;
-	}
-
-	&__triangles-right {
-		position: absolute;
-		bottom: 100%;
-		right: 0;
-		width: 50%;
-		height: 110px;
-		fill: $beige;
-	}
-
 	&__left {
 		display: flex;
 		flex-direction: column;

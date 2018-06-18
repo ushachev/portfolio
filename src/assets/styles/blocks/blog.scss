@@ -14,23 +14,6 @@
 		width: 23%;
 	}
 
-	&__triangles-left,
-	&__triangles-right {
-		position: absolute;
-		bottom: 100%;
-		width: 50%;
-		height: 110px;
-		fill: #fff;
-	}
-
-	&__triangles-left {
-		left: 0;
-	}
-
-	&__triangles-right {
-		right: 0;
-	}
-
 	&__list {
 		margin-left: auto;
 		width: 65%;

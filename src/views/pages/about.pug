@@ -2,7 +2,9 @@ extends ../main.layout.pug
 
 block variables
 	-
-		var title = 'Обо мне'
+		var title = 'Обо мне',
+				modTriangleLeft = 'white',
+				modTriangleRight = 'beige'
 
 block scripts
 	script(src='about.bundle.js')
@@ -12,10 +14,6 @@ block header
 
 block content
 	section(id='next').about
-		svg.about__triangles-left(viewBox="0 0 600 110" preserveAspectRatio="none")
-			polygon(points="0,0 0,110 600,110")
-		svg.about__triangles-right(viewBox="0 0 600 110" preserveAspectRatio="none")
-			polygon(points="600,0 600,110 0,110")
 		.container.container_about
 			.about__left
 				h1.title.about__title

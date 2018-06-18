@@ -6,7 +6,7 @@ body {
 	font-family: 'Roboto', Helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: 400;
-	// line-height: 1.42;
+	line-height: $lineHeight;
 	color: $text-color;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -14,7 +14,7 @@ body {
 
 .wrapper {
 	height: 100%;
-	min-height: 100%;
+	// min-height: 100%;
 	position: relative;
 }
 
@@ -31,8 +31,34 @@ body {
 }
 
 .maincontent {
+	position: relative;
 	height: 100%;
 	margin-top: -60vh;
+
+	&__triangle-left,
+	&__triangle-right {
+		position: absolute;
+		bottom: 100%;
+		width: 50%;
+		height: 110px;
+		fill: #fff;
+	}
+
+	&__triangle-left {
+		left: 0;
+
+		&_white {
+			fill: $white;
+		}
+	}
+
+	&__triangle-right {
+		right: 0;
+
+		&_beige {
+			fill: $beige;
+		}
+	}
 }
 
 .container {
@@ -47,6 +73,25 @@ body {
 
 	&_about {
 		display: flex;
+	}
+}
+
+.container-index {
+	width: 380px;
+	height: 395px;
+	margin: auto;
+	perspective: 1200;
+}
+
+.flip-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: 1s linear;
+
+	&_flipped {
+		transform: rotateY(180deg);
 	}
 }
 
@@ -98,12 +143,18 @@ img {
 
 .text-content {
 	line-height: 24px;
+
+	p {
+		margin-bottom: 20px;
+	}
 }
 
 .title {
 	position: relative;
+	box-sizing: border-box;
 	font-family: bernier;
 	font-size: 63px;
+	line-height: 1.1;
 	color: $grey;
 	z-index: 1;
 
