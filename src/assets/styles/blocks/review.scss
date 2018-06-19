@@ -8,6 +8,10 @@
 		position: relative;
 		margin-bottom: 20px;
 
+		q {
+			quotes: none;
+		}
+
 		&::before {
 			position: absolute;
 			content: '';

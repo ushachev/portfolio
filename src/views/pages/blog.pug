@@ -7,20 +7,21 @@ block variables
 block scripts
 	script(src='blog.bundle.js')
 
-block header
-	header.header
-		.container.container_header
-			.header__top
+block start-section
+	section.start
+		.container.container_start
+			header.header
 				+socials('', 'header__socials')(width='30' height='26')
-				button.hamburger-btn
+				button(type='button').hamburger-btn
 					+icon('hamburger', 'hamburger-btn__icon')(width='40' height='35')
-			.header__info.header__info_blog
-				include ../common/author-foto.pug
-				h1.title.header__title
-					span.header__title-text Блог
-					span.header__subtitle Статьи, которые я написал
-			a(href='#next').header__link
-				+icon('arrow_down', 'header__link-icon')(width='26' height='16')
+			.start__info.start__info_blog
+				.author-foto
+					+image('me_.jpg', 'Фото Виталий Ушачёв', 'author-foto__image')
+				h1.title.start__title
+					span.start__title-text Блог
+					span.start__subtitle Статьи, которые я написал
+			a(href='#next').start__link
+				+icon('arrow_down', 'start__link-icon')(width='26' height='16')
 
 block content
 	section.blog
@@ -57,4 +58,5 @@ block content
 							p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
 							p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
 
-		include ../common/footer.pug
+block footer
+	include ../common/footer.pug

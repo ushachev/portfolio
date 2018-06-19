@@ -9,8 +9,8 @@ block variables
 block scripts
 	script(src='about.bundle.js')
 
-block header
-	include ../common/header.pug
+block start-section
+	include ../common/start
 
 block content
 	section(id='next').about
@@ -55,22 +55,28 @@ block content
 	section.map
 		.google-map
 		.contacts
-			.contacts__container
-				h2.subtitle.contacts__title
-					span.contacts__title-text Контакты
-				address.contacts__data
-					ul.contacts__list
-						-
-							var contacts = [
-								['skype', 'abvgdeyozhtt', '24', '24'],
-								['mail', 'vit.ush@mail.ru', '23', '17'],
-								['phone', '+7 800 000 00 00', '19', '18'],
-								['map_marker', 'г.Орёл, ул.Ленина, д.1, кв.1', '19', '24']
-							]
-						each contact in contacts
-							li.contacts__item
-								a.contacts__link(href='#')
-									.contacts__marker
-										+icon(contact[0], `contacts__icon contacts__icon_${contact[0]}`)(width=`${contact[2]}` height=`${contact[3]}`)
-									span.contacts__value #{contact[1]}
-		include ../common/footer.pug
+			h2.subtitle.contacts__title
+				span.contacts__title-text Контакты
+			address.contacts__data
+				ul.contacts__list
+					-
+						var contacts = [
+							['skype', 'callto:abvgdeyozhtt', 'abvgdeyozhtt'],
+							['mail', 'mailto:vit.ush@mail.ru', 'vit.ush@mail.ru'],
+							['phone', 'tel:+7-800-000-00-00', '+7 800 000 00 00'],
+							['map', '#', 'г.Орёл, ул.Ленина, д.1, кв.1']
+						]
+					each contact in contacts
+						li.contacts__item
+							a(class=`contacts__link contacts__link_${contact[0]}`, href=`${contact[1]}`)
+								span.contacts__value #{contact[2]}
+block footer
+	footer.footer.footer_about
+		.container
+			.footer__row
+				+nav('footer', menuItems)
+				+socials('', 'footer__socials')(width='30' height='26')
+			.footer__row
+				.footer__cell.footer__cell_left Я веб-разработчик из Орла, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+				.footer__cell.footer__cell_right 
+					small.footer__copy © Виталий Ушачёв | создано с любовью в LoftSchool | 2018

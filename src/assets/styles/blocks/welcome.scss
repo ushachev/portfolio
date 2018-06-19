@@ -11,29 +11,25 @@
 	backface-visibility: hidden;
 	z-index: 10;
 
-	.author {
+	&__author {
 		margin-top: 35px;
 		margin-bottom: 23px;
 		color: $text-color;
-
-		&__name {
-			margin-top: 15px;
-		}
 	}
 
 	&__socials {
 
-		.socials__item:not(:last-child) {
-			margin-right: 30px;
-		}
+		// .socials__item:not(:last-child) {
+		// 	margin-right: 30px;
+		// }
 
 		.socials__icon {
 			fill: #00bfa5;
-			opacity: 0.5;
+			// opacity: 0.5;
 
-			&:hover {
-				opacity: 1;
-			}
+			// &:hover {
+			// 	opacity: 1;
+			// }
 		}
 	}
 

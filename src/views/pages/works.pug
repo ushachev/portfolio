@@ -7,8 +7,8 @@ block variables
 block scripts
 	script(src='works.bundle.js')
 
-block header
-	include ../common/header.pug
+block start-section
+	include ../common/start
 
 block content
 	section(id='prev').galery
@@ -47,17 +47,10 @@ block content
 						+icon('link', 'galery__link-icon')
 						span Посмотреть сайт
 			.galery__preview
-				.galery__work-number #{works[1][2]}
 				+image(works[1][0], 'Фото превью сайта', 'galery__image')
 			.galery__slider-links
-				a.galery__slider-link(style=`background-image: url(assets/images/${works[0][0]})`)
-					.galery__work-number.galery__work-number_slider #{works[0][2]}
-					.galery__link-overlay.galery__link-overlay_prev
-					+icon('portf_arrow_down', 'galery__prev-icon')
-				a.galery__slider-link(style=`background-image: url(assets/images/${works[2][0]})`)
-					.galery__work-number.galery__work-number_slider #{works[2][2]}
-					.galery__link-overlay.galery__link-overlay_next
-					+icon('portf_arrow_up', 'galery__next-icon')
+				button.galery__slider-link.galery__slider-link_prev(type='button', style=`background-image: url(assets/images/${works[0][0]})`)
+				button.galery__slider-link.galery__slider-link_next(type='button', style=`background-image: url(assets/images/${works[2][0]})`)
 	section.reviews
 		h2.title.reviews__title
 			.marked-title.reviews__marked-title Что обо мне говорят
@@ -65,7 +58,7 @@ block content
 			li.reviews__item
 				.review
 					.text-content.review__content
-						p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+						q Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
 					.review__author
 						.review__author-foto
 							+image('foto-rev1.jpg', 'Фото автора отзыва', 'review__image')
@@ -75,7 +68,7 @@ block content
 			li.reviews__item
 				.review
 					.text-content.review__content
-						p Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+						q Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
 					.review__author
 						.review__author-foto
 							+image('foto-rev2.jpg', 'Фото автора отзыва', 'review__image')
@@ -100,4 +93,6 @@ block content
 						span.review-form__btn-text Очистить
 		a(href='#prev').reviews__link-up
 			+icon('portf_arrow_up', 'reviews__link-icon')(width='26' height='16')
-		include ../common/footer.pug
+
+block footer
+	include ../common/footer.pug

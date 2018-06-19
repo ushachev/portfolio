@@ -92,20 +92,20 @@
 		background-color: $beige;
 	}
 
-	&__work-number {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		font-size: 350px;
-		line-height: 350px;
-		color: #d7007e;
-		transform: translate(-50%, -50%);
+	// &__work-number {
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	left: 50%;
+	// 	font-size: 350px;
+	// 	line-height: 350px;
+	// 	color: #d7007e;
+	// 	transform: translate(-50%, -50%);
 
-		&_slider {
-			font-size: 150px;
-			line-height: 150px;
-		}
-	}
+	// 	&_slider {
+	// 		font-size: 150px;
+	// 		line-height: 150px;
+	// 	}
+	// }
 
 	&__image {
 		margin: auto;
@@ -129,43 +129,58 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		overflow: hidden;
-	}
 
-	&__link-overlay {
-		position: absolute;
-		width: 100%;
-		height: 100%;
+		&::before {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+
+		&::after {
+			display: block;
+			margin: auto;
+			content: '';
+			width: 43px;
+			height: 27px;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			// overflow: hidden;
+			transition: .5s;
+			z-index: 10;
+		}
 
 		&_prev {
-			background-color: rgba(#b6b4ae, .7);
+
+			&::before {
+				background-color: rgba(#b6b4ae, .7);
+			}
+
+			&::after {
+				background-image: svg-load('portf_arrow_down.svg', fill=#fff);
+			}
+
+			&:hover::after {
+				transform: translateY(30px);
+			}
 		}
 
 		&_next {
-			background-color: rgba(#888372, .5);
-		}
-	}
 
-	&__prev-icon,
-	&__next-icon {
-		margin: auto;
-		width: 43px;
-		height: 27px;
-		fill: #fff;
-		transition: .5s;
-		z-index: 10;
-	}
+			&::before {
+				background-color: rgba(#888372, .5);				
+			}
 
-	&__prev-icon {
-		
-		.galery__slider-link:hover & {
-			transform: translateY(30px);
-		}
-	}
+			&::after {
+				background-image: svg-load('portf_arrow_up.svg', fill=#fff);
+			}
 
-	&__next-icon {
-		
-		.galery__slider-link:hover & {
-			transform: translateY(-30px);
+			&:hover::after {
+				transform: translateY(-30px);
+			}
 		}
 	}
 }

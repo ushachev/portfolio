@@ -7,7 +7,11 @@ block content
 	.container-index
 		.flip-wrapper
 			.welcome
-				include ../common/author.pug
+				.author.welcome__author
+					.author-foto
+						+image('me_.jpg', 'Фото Виталий Ушачёв', 'author-foto__image')
+					.author__name.author__name_welcome Виталий Ушачёв
+					.author__subtitle Личный сайт веб разработчика
 				+socials('', 'welcome__socials')(width='30' height='26')
 				-
 					var menuItems = [
@@ -24,7 +28,7 @@ block content
 					]
 				+nav('welcome', menuItems)
 			.login
-				h1.subtitle.login__title
+				h2.subtitle.login__title
 					span.login__title-text Авторизуйтесь
 				form(action="#" method="post" id='login-form').login-form.login__form
 					.login-form__input-row
