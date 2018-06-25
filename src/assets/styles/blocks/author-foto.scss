@@ -1,0 +1,10 @@
+.author-foto {
+	width: 144px;
+	height: 144px;
+	border-radius: 50%;
+	overflow: hidden;
+
+	&__image {
+		object-fit: cover;
+	}
+}

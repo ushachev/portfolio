@@ -1,0 +1,22 @@
+include _variables
+
+section.start
+	.container.container_start
+		header.header
+			+nav('header', menuItems)
+			+socials('', 'header__socials')(width='30' height='26')
+			button(type='button').hamburger.hamburger_slider
+				span.hamburger-box
+					span.hamburger-inner
+			//- button(type='button').hamburger-btn
+				+icon('hamburger', 'hamburger-btn__icon')(width='40' height='35')
+		.start__info
+			.author
+				.author-foto
+					+image('me_.jpg', 'Фото Виталий Ушачёв', 'author-foto__image')
+				.author__name Виталий Ушачёв
+				.author__subtitle Личный сайт веб разработчика
+		a(href='#next').start__link
+			+icon('arrow_down', 'start__link-icon')(width='26' height='16')
+
+			

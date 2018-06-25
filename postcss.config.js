@@ -11,12 +11,14 @@ module.exports = {
     require("postcss-advanced-variables")({
       variables: require("./src/assets/styles/variables")
     }),
+    require("postcss-extend"),
     require("postcss-nested"),
     require("postcss-rgb"),
+    require("math-calc"),
     require("postcss-inline-comment"),
     require("postcss-inline-svg")({
       removeFill: true,
-      path: "./src/assets/images/icons"
+      path: "./src/assets/images/bg-svg"
     }),
     require("postcss-svgo"),
     require("cssnano")()

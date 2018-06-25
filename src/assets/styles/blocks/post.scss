@@ -1,0 +1,20 @@
+.post {
+
+	&__header {
+		margin-bottom: 10px;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+		width: 95%;
+	}
+
+	&__date {
+		color: rgba(#00bfa5, .7)
+	}
+
+	p {
+		margin: 10px 0;
+		line-height: 26px;
+	}
+}

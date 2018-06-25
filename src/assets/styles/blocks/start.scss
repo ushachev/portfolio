@@ -1,0 +1,85 @@
+.start {
+	height: 160vh;
+	background-color: #8aafaf;
+	background-image: url(./assets/images/bg_header.jpg);
+	background-repeat: no-repeat;
+	background-position-y: 25%;
+	background-size: cover;
+	overflow: hidden;
+
+	&__info {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-self: center;
+		flex: 1;
+		width: 100%;
+		max-width: 1175px;
+		height: 310px;
+		z-index: 1;
+
+		&::before {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-image: svg-load('portfolio_header.svg', fill=#fff);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			opacity: 0.06;
+			z-index: -1;
+
+			@include tablet {
+				display: none;
+			}
+		}
+
+		&_blog {
+			flex-direction: column;
+			height: 320px;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	&__title {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 8px;
+		width: 300px;
+		height: 200px;
+
+		color: #fff;
+
+		&::before {
+			background-image: svg-load('blog_header.svg', fill=#fff);
+		}
+	}
+
+	&__title-text {
+		@include marked;
+	}
+
+	&__subtitle {
+		font-family: 'Roboto', Helvetica, sans-serif;
+		font-size: 16px;		
+	}
+
+	&__link {
+		align-self: center;
+		margin-bottom: 7vh;
+		z-index: 10;
+	}
+
+	&__link-icon {
+		fill: rgba(#fff, 0.7);
+	}
+}
