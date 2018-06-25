@@ -19,9 +19,24 @@
 		text-decoration: none;
 		color: inherit;
 
+		@include tablet {
+			color: rgba(#fff, .7);
+		}
+
 		&:hover,
 		.post-menu__item_active & {
 			color: #00bfa5;
+
+			@include tablet {
+				color: #fff;
+			}
+		}
+
+		.post-menu__item_active & {
+
+			@include tablet {
+				font-weight: 700;
+			}
 		}
 	}
 }

@@ -21,3 +21,27 @@
 		right: -42px;
 	}
 }
+
+@mixin tablet {
+	@media screen and (max-width: $tablet) {
+		@content;
+	}
+}
+
+@mixin phone {
+	@media screen and (max-width: $phone) {
+		@content;
+	}
+}
+
+@mixin small-phone {
+	@media screen and (max-width: $small-phone) {
+		@content;
+	}
+}
+
+@mixin wide-desktop {
+	@media screen and (min-width: 1920px) {
+		@content;
+	}
+}

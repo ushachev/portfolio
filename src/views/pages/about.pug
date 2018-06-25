@@ -3,8 +3,7 @@ extends ../main.layout.pug
 block variables
 	-
 		var title = 'Обо мне',
-				modTriangleLeft = 'white',
-				modTriangleRight = 'beige'
+				modTriangle = 'about'
 
 block scripts
 	script(src='about.bundle.js')
@@ -14,46 +13,47 @@ block start-section
 
 block content
 	section(id='next').about
-		.container.container_about
-			.about__left
+		.about__left
+			.about__container-left
 				h1.title.about__title
 					span.about__title-text.about__title-text_with-bg Обо мне
-				.about__author-foto
-					+image('me_.jpg', 'Фото Виталий Ушачёв', 'about__author-image')
-				h2.subtitle.about__subtitle
-					span.about__title-text Кто я
-				.about__about-me.text-content
-					p Я веб разработчик из Орла. Мне 43 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-					p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите как тут всё классно и красиво!
-			.about__right
+				.about__info
+					.about__author-foto
+						+image('me_.jpg', 'Фото Виталий Ушачёв', 'about__author-image')
+					h2.subtitle.about__subtitle
+						span.about__title-text Кто я
+					.about__about-me.text-content
+						p Я веб разработчик из Орла. Мне 43 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+						p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите как тут всё классно и красиво!
+		.about__right
+			.about__container-right
 				h2.subtitle.about__subtitle
 					span.about__title-text Чем я могу быть
 					br
 					span вам полезен
 				.about__about-skills.text-content
 					p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
-				.about__skills
-					- 
-						var skills = [
-							['Frontend', [['Html5', 30], ['css3', 50], ['JavaScript & jQuery', 70]]],
-							['Backend', [['PHP', 30], ['mySQL', 50], ['Node.js & npm', 70], ['Mongo.db', 50]]],
-							['Workflow', [['Git', 30], ['Gulp', 50], ['Bower', 70]]]
-						]
+				#skills-container
+				//- - 
+				//- 	var skills = [
+				//- 		['Frontend', [['Html5', 30], ['css3', 50], ['JavaScript & jQuery', 70]]],
+				//- 		['Backend', [['PHP', 30], ['mySQL', 50], ['Node.js & npm', 70], ['Mongo.db', 50]]],
+				//- 		['Workflow', [['Git', 30], ['Gulp', 50], ['Bower', 70]]]
+				//- 	]
 
-					ul.skills-list
-						each skillsrow in skills
-							li.skills-list__item.skills-row
-								.skills-row__title #{skillsrow[0]}
-								ul.skills-row__list
-									each skill in skillsrow[1]
-										li.skills-row__item
-											figure.skill
-												svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
-													circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-													circle(cx="50" cy="50" r="40" data-percents=`${skill[1]}`).skill__circle.skill__circle_above
-												.skill__title #{skill[0]}
+				//- ul.about__skills
+				//- 	each skillsrow in skills
+				//- 		li.skills-row
+				//- 			.skills-row__title #{skillsrow[0]}
+				//- 			ul.skills-row__list
+				//- 				each skill in skillsrow[1]
+				//- 					li.skills-row__item
+				//- 						figure.skill
+				//- 							svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__figure
+				//- 								circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+				//- 								circle(cx="50" cy="50" r="40" data-percents=`${skill[1]}`).skill__circle.skill__circle_above
+				//- 							.skill__title #{skill[0]}
 	section.map
-		.google-map
 		.contacts
 			h2.subtitle.contacts__title
 				span.contacts__title-text Контакты
@@ -70,6 +70,7 @@ block content
 						li.contacts__item
 							a(class=`contacts__link contacts__link_${contact[0]}`, href=`${contact[1]}`)
 								span.contacts__value #{contact[2]}
+		.map__google-map
 block footer
 	footer.footer.footer_about
 		.container

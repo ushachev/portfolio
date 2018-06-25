@@ -2,17 +2,35 @@
 	margin-bottom: 20px;
 	background-color: #fff;
 
+	@include tablet {
+		margin-bottom: 0;
+	}
+
 	&__title {
 		display: flex;
 		margin: 0 auto 20px;
 		padding-top: 23px;
 		padding-right: 19px;
 		width: 506px;
+		max-width: 70%;
 		height: 165px;
 		box-sizing: border-box;
 
 		&::before {
 			background-image: svg-load('works_header.svg', fill=#6d7070);
+		}
+
+		@include tablet {
+			margin-bottom: 10px;
+			height: 130px;
+		}
+
+		@include phone {
+			height: 100px;
+		}
+
+		@include small-phone {
+			height: 80px;
 		}
 	}
 
@@ -36,11 +54,24 @@
 		width: 50%;
 		height: 100%;
 		background-color: $white;
+
+		@include tablet {
+			width: 100%;
+			height: 27%;
+		}
+
+		@include phone {
+			justify-content: space-evenly;
+		}
 	}
 
 	&__work-title {
 		display: flex;
 		max-width: 43%;
+
+		@include tablet {
+			max-width: 55%;
+		}
 	}
 
 	&__marked-title {
@@ -49,11 +80,25 @@
 
 	&__work-techn {
 		display: flex;
-		margin: 35px 0 55px;
+		margin: 35px 0 40px;
 		width: 70%;
 		height: 50px;
 		border-top: 1px solid rgba(#00bfa5, .3);
 		border-bottom: 1px solid rgba(#00bfa5, .3);
+
+		@include tablet {
+			margin: 15px 0 20px;
+			width: 45%;
+		}
+
+		@include phone {
+			margin: 0;
+		}
+
+		@include small-phone {
+			width: 95%;
+			height: 30px;
+		}
 	}
 
 	&__techn-text {
@@ -63,6 +108,7 @@
 	}
 
 	&__link {
+		display: block;
 		padding: 13px 20px;
 		border-radius: 5px;
 		font-weight: 500;
@@ -72,6 +118,10 @@
 
 		&:hover {
 			background-color: #009688;
+		}
+
+		@include small-phone {
+			padding: 10px 17px;
 		}
 	}
 
@@ -90,6 +140,12 @@
 		width: 50%;
 		height: 75%;
 		background-color: $beige;
+
+		@include tablet {
+			width: 100%;
+			height: 52%;
+			order: -1;
+		}
 	}
 
 	&__image {
@@ -102,6 +158,11 @@
 		display: flex;
 		width: 50%;
 		height: 25%;
+
+		@include tablet {
+			width: 100%;
+			height: 21%;
+		}
 	}
 
 	&__slider-link {

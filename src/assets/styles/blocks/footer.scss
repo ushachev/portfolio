@@ -9,6 +9,18 @@
 		&:first-child {
 			border-bottom: 1px solid rgba(#fff, .1);
 		}
+
+		@include tablet {
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+	}
+
+	&__nav {
+
+		@include tablet {
+			margin-top: 25px;
+		}
 	}
 
 	&__nav-list {
@@ -19,6 +31,14 @@
 
 		&:not(:last-child) {
 			margin-right: 40px;
+
+			@include phone {
+				margin-right: 20px;
+			}
+
+			@include small-phone {
+				margin-right: 10px;
+			}
 		}
 	}
 
@@ -88,8 +108,18 @@
 		font-weight: 300;
 		color: rgba(#fff, .5);
 
+		@include tablet {
+			max-width: 95%;
+			text-align: center;
+		}
+
 		&_right {
 			text-align: right;
+
+			@include tablet {
+				padding-top: 0;
+				text-align: center;
+			}
 		}
 	}
 

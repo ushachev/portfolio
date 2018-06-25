@@ -10,17 +10,39 @@
 	background-size: cover;
 	overflow: hidden;
 
+	@include tablet {
+		background-position-y: 30%;
+		background-size: auto;
+	}
+
+	@include phone {
+		background-position-y: 20%;
+	}
+
 	&__title {
 		display: flex;
 		margin-bottom: 100px;
 		padding-top: 23px;
 		padding-right: 19px;
 		width: 499px;
+		max-width: 70%;
 		height: 175px;
 
 		&::before {
 			background-image: svg-load('about_header.svg', fill=#6d7070);
 		}
+
+		@include tablet {
+			margin-bottom: 40px;
+			padding-top: 0;
+			padding-right: 10px;
+			height: 140px;
+		}
+
+		@include small-phone {
+			height: 110px;
+		}
+
 	}
 
 	&__marked-title {
@@ -31,6 +53,14 @@
 		&::after {
 			top: 1em * 1.1 / 2;
 		}
+
+		@include tablet {
+			max-width: none;
+		}
+
+		@include phone {
+			max-width: 75%;
+		}
 	}
 
 	&__list {
@@ -38,27 +68,56 @@
 		justify-content: center;
 		margin-bottom: 65px;
 		max-width: 780px;
+
+		@include tablet {
+			margin-bottom: 45px;
+			max-width: 95%;
+		}
+
+		@include phone {
+			flex-direction: column;
+		}
+
+		@include small-phone {
+			margin-bottom: 25px;
+		}
 	}
 
 	&__item {
 		flex: 1;
 		padding-right: 20px;
 
+		&:first-child {
+
+			@include phone {
+				margin-bottom: 65px;
+			}
+		}
+
 		&:last-child {
 			margin-left: 15px;
+
+			@include phone {
+				margin-left: 0;
+			}
 		}
 	}
 
 	&__form {
 		position: relative;
-		margin-bottom: 70px;
+		margin-bottom: 6vh;
 		width: 380px;
+		max-width: 95%;
 		height: 440px;
 		border-radius: 5px;
 		overflow: hidden;
 
 		&:hover .reviews__form-bg {
 			filter: blur(1px);
+		}
+
+		@include tablet {
+			height: 420px;
 		}
 	}
 
@@ -75,7 +134,7 @@
 	}
 
 	&__link-up {
-		margin-bottom: 70px;
+		margin-bottom: 6vh;
 	}
 
 	&__link-icon {

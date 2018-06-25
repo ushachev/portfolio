@@ -11,10 +11,10 @@ module.exports = {
     require("postcss-advanced-variables")({
       variables: require("./src/assets/styles/variables")
     }),
-    require("math-calc"),
     require("postcss-extend"),
     require("postcss-nested"),
     require("postcss-rgb"),
+    require("math-calc"),
     require("postcss-inline-comment"),
     require("postcss-inline-svg")({
       removeFill: true,

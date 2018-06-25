@@ -14,16 +14,21 @@ html(lang="ru")
 	body
 		.wrapper
 			block start-section
+				
 			main.maincontent
-				svg.maincontent__triangle-left(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangleLeft) ? ` maincontent__triangle-left_${modTriangleLeft}` : '')
+				svg.maincontent__triangle-left(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangle) ? ` maincontent__triangle-left_${modTriangle}` : '')
 					polygon(points="0,0 0,110 600,110")
-				svg.maincontent__triangle-right(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangleRight) ? ` maincontent__triangle-right_${modTriangleRight}` : '')
+				svg.maincontent__triangle-right(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangle) ? ` maincontent__triangle-right_${modTriangle}` : '')
 					polygon(points="600,0 600,110 0,110")
 
 				block content
 
 			block footer
+
+	include ./components/entry
+
 	script(src='bootloader.bundle.js')
 	script(src='vendor.bundle.js')
+		
 	block scripts
 		

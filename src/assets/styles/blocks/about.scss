@@ -1,12 +1,47 @@
 .about {
 	position: relative;
-	background-image: linear-gradient(to right, $white 50%, $beige 50%);
-
+	display: flex;
+	// background-image: linear-gradient(to right, $white 50%, $beige 50%);
+	
+	@include tablet {
+		flex-direction: column;
+	}
+	
 	&__left {
+		display: flex;
+		justify-content: flex-end;
+		padding-bottom: 40px;
+		width: 50%;
+		background-color: $white;
+
+		@include tablet {
+			width: 100%;
+		}
+
+		@include phone {
+			padding-bottom: 5px;
+		}
+	}
+
+	&__container-left {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 50%;
+		width: 100%;
+		max-width: 912px;
+		padding-left: 3%;
+		padding-right: 35px;
+
+		@include wide-desktop {
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: flex-start;
+			padding-right: 35px;
+		}
+
+		@include tablet {
+			padding: 0;
+		}
 	}
 
 	&__title {
@@ -15,15 +50,28 @@
 		align-items: center;
 		width: 357px;
 		height: 125px;
-		margin-bottom: 30px;
 
 		&::before {
 			background-image: svg-load('about_header.svg', fill=#6d7070);
+		}
+
+		@include wide-desktop {
+			margin-top: -20px;
+			margin-right: 25px;
+		}
+
+		@include tablet {
+			height: 90px;
+		}
+
+		@include small-phone {
+			height: 70px;
 		}
 	}
 
 	&__title-text {
 		@include marked;
+		white-space: nowrap;
 
 		&_with-bg {
 			padding-top: 27px;
@@ -35,10 +83,35 @@
 		}
 	}
 
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 30px;
+
+		@include tablet {
+			margin-top: 24px;
+		}
+
+		@include small-phone {
+			margin-top: 15px;
+		}
+	}
+
 	&__author-foto {
-		width: 446px;
-		height: 393px;
 		margin-bottom: 35px;
+		max-width: 446px;
+		height: 393px;
+
+		@include phone {
+			margin-bottom: 25px;
+			width: 100%;
+			max-width: none;
+		}
+
+		@include small-phone {
+			height: 280px;
+		}
 	}
 
 	&__author-image {
@@ -46,7 +119,13 @@
 	}
 
 	&__subtitle {
-		margin-bottom: 35px;
+		margin-bottom: 30px;
+		width: 89%;
+		text-align: center;
+
+		@include tablet {
+			margin-bottom: 15px;
+		}
 	}
 
 	&__about-me {
@@ -55,22 +134,61 @@
 		p {
 			margin-bottom: 20px;
 		}
+
+		@include phone {
+			width: 95%;
+			max-width: none;
+		}
 	}
 
 	&__right {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding-top: 50px;
+		padding-top: 45px;
+		padding-bottom: 15px;
 		width: 50%;
+		background-color: $beige;
+
+		@include tablet {
+			width: 100%;
+		}
+
+		@include phone {
+			padding-top: 25px;
+		}
 	}
 
-	&__subtitle {
-		text-align: center;
+	&__container-right {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		padding-left: 35px;
+		padding-right: 2%;
+		max-width: 912px;
+
+		@include tablet{
+			align-items: center;
+			padding: 0;
+			width: 95%;
+		}
 	}
 
 	&__about-skills {
 		width: 89%;
-		margin-bottom: 50px;
+		margin-bottom: 30px;
+
+		@include tablet {
+			margin-left: 0;
+			margin-bottom: 20px;
+			width: 75%;
+			text-align: center;
+		}
+
+		@include phone {
+			margin-bottom: 0;
+		}
+	}
+
+	&__skills {
+		display: flex;
+		flex-direction: column;
 	}
 }

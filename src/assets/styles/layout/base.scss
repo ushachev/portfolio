@@ -10,12 +10,25 @@ body {
 	color: $text-color;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	&.scroll-off {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	@include tablet {
+		font-size: 14px;
+	}
 }
 
 .wrapper {
-	// height: 100%;
 	// min-height: 100%;
 	position: relative;
+
+	&_scroll-off {
+		// height: 100%;
+		// overflow: hidden;
+	}
 }
 
 .wrapper-index {
@@ -27,13 +40,12 @@ body {
 	background-color: #8aafaf;
 	background-repeat: no-repeat;
 	background-size: cover;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 .maincontent {
 	position: relative;
-	// height: 100%;
-	// margin-top: -60vh;
+	margin-top: -60vh;
 
 	&__triangle-left,
 	&__triangle-right {
@@ -42,12 +54,24 @@ body {
 		width: 50%;
 		height: 110px;
 		fill: #fff;
+
+		@include tablet {
+			height: 80px;
+		}
+
+		@include phone {
+			height: 60px;
+		}
+
+		@include small-phone {
+			height: 35px;
+		}
 	}
 
 	&__triangle-left {
 		left: 0;
 
-		&_white {
+		&_about {
 			fill: $white;
 		}
 	}
@@ -55,8 +79,12 @@ body {
 	&__triangle-right {
 		right: 0;
 
-		&_beige {
+		&_about {
 			fill: $beige;
+
+			@include tablet {
+				fill: $white;
+			}
 		}
 	}
 }
@@ -64,15 +92,23 @@ body {
 .container {
 	margin: 0 auto;
 	width: 95%;
+	max-width: 1824px;
 
 	&_start {
 		display: flex;
 		flex-direction: column;
-		// height: 62.5%;
-		height: 100%;
+		height: 100vh;
 	}
 
 	&_about {
+		display: flex;
+
+		@include tablet {
+			flex-direction: column;
+		}
+	}
+
+	&_blog {
 		display: flex;
 	}
 }
@@ -82,6 +118,18 @@ body {
 	height: 395px;
 	margin: auto;
 	perspective: 1200;
+
+	@include tablet {
+		width: 350px;
+	}
+
+	@include phone {
+		width: 300px;
+	}
+
+	@include small-phone {
+		height: 365px;
+	}
 }
 
 .flip-wrapper {
@@ -172,11 +220,27 @@ img {
 		opacity: 0.07;
 		z-index: -1;
 	}
+
+	@include tablet {
+		font-size: 49px;
+	}
+
+	@include small-phone {
+		font-size: 35px;
+	}
 }
 
 .subtitle {
 	font-family: bernier;
 	font-size: 35px;
+
+	@include tablet {
+		font-size: 30px;
+	}
+
+	@include phone {
+		font-size: 21px;
+	}
 }
 
 .copy {
@@ -186,6 +250,103 @@ img {
 	padding-bottom: 30px;
 	font-size: inherit;
 	font-weight: 300;
+	line-height: 24px;
 	color: #fff;
+	text-align: center;
 	transform: translateX(-50%);
+
+	span {
+		white-space: nowrap;
+
+		&:first-child::after {
+			display: inline;
+			content: ' | ';
+
+			@include phone {
+				content: '';
+			}
+		}
+
+		@include phone {
+			display: block;
+		}
+	}
+
+	@include small-phone {
+		padding-bottom: 5px;
+	}
+}
+
+// Hamburger
+// ==================================================
+.hamburger {
+  padding: $hamburger-padding-y $hamburger-padding-x;
+  display: inline-block;
+  cursor: pointer;
+
+  transition-property: opacity, filter;
+  transition-duration: $hamburger-hover-transition-duration;
+  transition-timing-function: $hamburger-hover-transition-timing-function;
+
+  // Normalize (<button>)
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  z-index: 30;
+
+  &:hover {
+    @if $hamburger-hover-use-filter == true {
+      filter: $hamburger-hover-filter;
+    }
+    @else {
+      opacity: $hamburger-hover-opacity;
+    }
+  }
+}
+
+.hamburger-box {
+  width: $hamburger-layer-width;
+  // height: 3 * $hamburger-layer-height + (2 * $hamburger-layer-spacing);
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: $hamburger-layer-height / -2;
+
+  &,
+  &::before,
+  &::after {
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height;
+    background-color: $hamburger-layer-color;
+    border-radius: $hamburger-layer-border-radius;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+  }
+
+  &::before {
+    // top: -1 * $hamburger-layer-spacing - $hamburger-layer-height;
+    top: -10px;
+  }
+
+  &::after {
+    // bottom: -1 * $hamburger-layer-spacing - $hamburger-layer-height;
+    top: -10px;
+  }
 }

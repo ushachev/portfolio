@@ -15,6 +15,11 @@
 
 		&_welcome {
 			margin-top: 15px;
+			font-size: 28px;
+
+			@include phone {
+				font-size: 21px;
+			}
 		}
 	}
 

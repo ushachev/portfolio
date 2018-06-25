@@ -11,9 +11,13 @@ block start-section
 	section.start
 		.container.container_start
 			header.header
+				+nav('header', menuItems)
 				+socials('', 'header__socials')(width='30' height='26')
-				button(type='button').hamburger-btn
-					+icon('hamburger', 'hamburger-btn__icon')(width='40' height='35')
+				button(type='button').hamburger.hamburger_slider
+					span.hamburger-box
+						span.hamburger-inner
+				//- button(type='button').hamburger-btn
+				//- 	+icon('hamburger', 'hamburger-btn__icon')(width='40' height='35')
 			.start__info.start__info_blog
 				.author-foto
 					+image('me_.jpg', 'Фото Виталий Ушачёв', 'author-foto__image')
@@ -25,8 +29,8 @@ block start-section
 
 block content
 	section.blog
-		aside.blog__sidebar
-			nav.blog__nav
+		.container.container_blog
+			aside.blog__sidebar
 				ul.post-menu
 					-
 						var postTitles = [[
@@ -38,7 +42,6 @@ block content
 					each title, ndx in postTitles[0]
 						li.post-menu__item(class= (ndx === postTitles[1]) ? ' post-menu__item_active' : '')
 							a(href='#').post-menu__link= title
-		.container
 			ul.blog__list
 				li.blog__item
 					article.post

@@ -1,9 +1,12 @@
 .map {
 	position: relative;
-	height: 100vh;
-	background-image: url(./assets/images/bg_map.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	overflow: hidden;
+
+	&__google-map {
+		height: 100vh;
+		background-image: url(./assets/images/bg_map.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		overflow: hidden;
+	}
 }

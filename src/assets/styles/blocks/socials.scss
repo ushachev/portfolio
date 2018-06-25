@@ -24,16 +24,31 @@
 		&_vk {
 			width: 31px;
 			height: 17px;
+
+			@include small-phone {
+				width: 25px;
+				height: 14px;
+			}
 		}
 
 		&_github {
 			width: 26px;
 			height: 22px;
+
+			@include small-phone {
+				width: 21px;
+				height: 18px;
+			}
 		}
 
 		&_in {
 			width: 24px;
 			height: 22px;
+
+			@include small-phone {
+				width: 19px;
+				height: 18px;
+			}
 		}
 	}
 }

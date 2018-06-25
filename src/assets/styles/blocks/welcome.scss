@@ -54,5 +54,9 @@
 		color: #fff;
 		text-decoration: none;
 		text-align: center;
+
+		@include phone {
+			padding: 15px 22px;
+		}
 	}
 }
