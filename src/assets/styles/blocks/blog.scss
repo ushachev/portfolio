@@ -7,7 +7,6 @@
 	background-color: #fff;
 
 	&__sidebar {
-		// position: relative;
 		width: 25%;
 		box-sizing: border-box;
 
@@ -61,14 +60,6 @@
 			box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
 			z-index: 10;
 		}
-
-		// &_tapped {
-
-		// 	@include tablet {
-		// 		position: fixed;
-		// 		top: 0;
-		// 	}
-		// }
 	}
 
 	&__list {

@@ -22,13 +22,7 @@ body {
 }
 
 .wrapper {
-	// min-height: 100%;
 	position: relative;
-
-	&_scroll-off {
-		// height: 100%;
-		// overflow: hidden;
-	}
 }
 
 .wrapper-index {
@@ -40,7 +34,6 @@ body {
 	background-color: #8aafaf;
 	background-repeat: no-repeat;
 	background-size: cover;
-	// overflow: hidden;
 }
 
 .maincontent {

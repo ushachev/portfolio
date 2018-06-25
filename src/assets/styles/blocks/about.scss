@@ -1,7 +1,6 @@
 .about {
 	position: relative;
 	display: flex;
-	// background-image: linear-gradient(to right, $white 50%, $beige 50%);
 	
 	@include tablet {
 		flex-direction: column;
@@ -185,10 +184,5 @@
 		@include phone {
 			margin-bottom: 0;
 		}
-	}
-
-	&__skills {
-		display: flex;
-		flex-direction: column;
 	}
 }
