@@ -9,6 +9,7 @@ block scripts
 
 block start-section
 	section.start
+		.start__bg
 		.container.container_start
 			header.header
 				+nav('header', menuItems)
@@ -22,11 +23,12 @@ block start-section
 				h1.title.start__title
 					span.start__title-text Блог
 					span.start__subtitle Статьи, которые я написал
-			a(href='#next').start__link
-				+icon('arrow_down', 'start__link-icon')(width='26' height='16')
+			//- a(href='#next').start__link
+			//- 	+icon('arrow_down', 'start__link-icon')(width='26' height='16')
 
 block content
 	section.blog
+		h2.visually-hidden Список статей
 		.container.container_blog
 			aside.blog__sidebar
 				ul.post-menu

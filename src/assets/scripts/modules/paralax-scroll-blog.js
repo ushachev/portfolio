@@ -1,7 +1,6 @@
 export let paralaxScroll = (function(options) {
   let bg = document.querySelector(options.bg),
-    bgText = document.querySelector(options.bgText),
-    author = document.querySelector(options.author);
+    bgText = document.querySelector(options.bgText);
 
   let _scroll = function(block, windowScroll, strafeAmount) {
     let strafe = windowScroll / -strafeAmount + "%";
@@ -12,13 +11,11 @@ export let paralaxScroll = (function(options) {
 
   return {
     init: function(wScroll) {
-      _scroll(bg, wScroll, 40);
-      _scroll(bgText, wScroll, 10);
-      _scroll(author, wScroll, 10);
+      _scroll(bg, wScroll, 35);
+      _scroll(bgText, wScroll, 25);
     }
   };
 })({
   bg: ".start__bg",
-  bgText: ".start__info",
-  author: ".author"
+  bgText: ".start__info"
 });

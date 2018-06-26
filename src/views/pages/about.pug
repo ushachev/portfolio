@@ -16,7 +16,9 @@ block content
 		.about__left
 			.about__container-left
 				h1.title.about__title
-					span.about__title-text.about__title-text_with-bg Обо мне
+					.marked-title.about__marked-title Обо мне
+				//- h1.title.about__title
+				//- 	span.about__title-text.about__title-text_with-bg Обо мне
 				.about__info
 					.about__author-foto
 						+image('me_.jpg', 'Фото Виталий Ушачёв', 'about__author-image')
@@ -42,7 +44,7 @@ block content
 				ul.contacts__list
 					-
 						var contacts = [
-							['skype', 'callto:abvgdeyozhtt', 'abvgdeyozhtt'],
+							['skype', 'skype:abvgdeyozhtt', 'abvgdeyozhtt'],
 							['mail', 'mailto:vit.ush@mail.ru', 'vit.ush@mail.ru'],
 							['phone', 'tel:+7-800-000-00-00', '+7 800 000 00 00'],
 							['map', '#', 'г.Орёл, ул.Ленина, д.1, кв.1']

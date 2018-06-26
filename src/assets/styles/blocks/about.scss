@@ -14,6 +14,7 @@
 		background-color: $white;
 
 		@include tablet {
+			justify-content: center;
 			width: 100%;
 		}
 
@@ -41,12 +42,17 @@
 		@include tablet {
 			padding: 0;
 		}
+
+		@include phone {
+			max-width: 480px;
+		}
 	}
 
 	&__title {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding-top: 27px;
 		width: 357px;
 		height: 125px;
 
@@ -60,6 +66,7 @@
 		}
 
 		@include tablet {
+			padding-top: 0;
 			height: 90px;
 		}
 

@@ -22,8 +22,13 @@
 		margin-left: -35px;
 
 		@include phone {
+			justify-content: center;
 			margin-left: 0;
 			width: 100%;
+		}
+
+		@include phone-land {
+			max-width: 575px;
 		}
 	}
 
@@ -36,13 +41,19 @@
 			margin-bottom: 40px;
 		}
 
-		@include phone {
+		@include phone-w-o-land {
 			flex: 1;
 			flex-basis: 33%;
 			margin-left: 0;
 		}
 
-		@include small-phone {
+		@include phone-land {
+			flex: 1;
+			flex-basis: 25%;
+			margin-left: 0;
+		}
+
+		@include small-phone-w-o-land {
 			flex-basis: 34%;
 			margin-bottom: 29px;
 		}

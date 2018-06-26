@@ -32,6 +32,10 @@
 			background-position: center;
 		}
 
+		@include small-phone {
+			height: 40px;
+		}
+
 		&_log {
 
 			&::before {
@@ -76,6 +80,11 @@
 
 		&:focus {
 			border-color: #00bfa5;
+		}
+
+		@include small-phone {
+			padding-top: 10px;
+			padding-bottom: 10px;
 		}
 	}
 
@@ -126,6 +135,10 @@
 		.login-form__check:focus + & {
 			border-bottom-color: initial;
 		}
+
+		@include small-phone {
+			margin-bottom: 12px;
+		}
 	}
 
 	&__capcha {
@@ -135,6 +148,11 @@
 		width: 51%;
 		border: none;
 		text-align: center;
+
+		@include small-phone {
+			margin-bottom: 15px;
+			width: 60%;
+		}
 	}
 
 	&__capcha-title {
@@ -193,7 +211,7 @@
 
 	&__btn {
 		flex: 1;
-		padding: 14px 16px;
+		padding: 14px 0;
 		background-color: rgba(#00bfa5, .85);
 
 		&:not(:last-child) {

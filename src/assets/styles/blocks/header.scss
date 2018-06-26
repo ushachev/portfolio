@@ -4,7 +4,7 @@
 	padding-top: 27px;
 
 	@include small-phone {
-		padding-top: 10px;
+		padding-top: 0;
 	}
 
 	&__nav {
@@ -14,7 +14,7 @@
 		left: 0;
 		width: 100%;
 		height: 100vh;
-		z-index: -20;
+		z-index: -5;
 
 		&::before,
 		&::after {
@@ -24,7 +24,7 @@
 			bottom: 0;
 			width: 50%;
 			background-color: rgba(#00bfa5, .87);
-			transition: .3s;
+			transition: .4s;
 		}
 
 		&::before {
@@ -36,7 +36,11 @@
 		}
 
 		&_overlay {
-			z-index: 20;
+			z-index: 10;
+
+			.header__nav-list {
+				display: block;
+			}
 
 			&::before {
 				right: 50%;
@@ -49,6 +53,7 @@
 	}
 
 	&__nav-list {
+		display: none;
 		margin: auto;
 	}
 
@@ -60,6 +65,10 @@
 
 		@include small-phone {
 			height: 90px;
+		}
+
+		@include Xsmall-phone-land {
+			height: 70px;
 		}
 
 		&_overlay {
@@ -80,7 +89,7 @@
 		color: #fff;
 		text-align: center;
 		text-decoration: none;
-		z-index: 1;
+		z-index: 10;
 
 		&:hover::before,
 		&:hover::after {

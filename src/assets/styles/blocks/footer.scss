@@ -21,6 +21,10 @@
 		@include tablet {
 			margin-top: 25px;
 		}
+
+		@include small-phone {
+			margin-top: 20px;
+		}
 	}
 
 	&__nav-list {

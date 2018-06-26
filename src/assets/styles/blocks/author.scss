@@ -21,6 +21,11 @@
 				font-size: 21px;
 			}
 		}
+
+		@include Xsmall-phone-land {
+			font-size: 29px;
+			margin-top: 5px;
+		}
 	}
 
 	&__subtitle {

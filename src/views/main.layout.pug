@@ -15,11 +15,13 @@ html(lang="ru")
 		.wrapper
 			block start-section
 				
-			main.maincontent
+			main.maincontent(style="transform: translate3d(0px, 0.01%, 0px);")
 				svg.maincontent__triangle-left(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangle) ? ` maincontent__triangle-left_${modTriangle}` : '')
 					polygon(points="0,0 0,110 600,110")
 				svg.maincontent__triangle-right(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangle) ? ` maincontent__triangle-right_${modTriangle}` : '')
 					polygon(points="600,0 600,110 0,110")
+				a(href='#next').maincontent__link
+					+icon('arrow_down', 'maincontent__link-icon')(width='26' height='16')
 
 				block content
 

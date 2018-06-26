@@ -1,5 +1,5 @@
 import { menuOverlay } from "./modules/menu-overlay";
-import { paralaxScroll } from "./modules/paralax-scroll";
+import { paralaxScroll } from "./modules/paralax-scroll-blog";
 
 menuOverlay.init();
 

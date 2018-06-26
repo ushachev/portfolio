@@ -77,20 +77,21 @@ block content
 							.review__author-position преподаватель
 		.reviews__form
 			.reviews__form-bg
-			form(action="#" method="post" id='review-form').review-form
-				h3.subtitle.review-form__title
-					.marked-title Связаться со мной
-				label(for='name').visually-hidden Имя
-				input(type='text' id='name' name="name" placeholder="Имя").review-form__input-txt
-				label(for='name').visually-hidden Email
-				input(type='email' id='mail' name="mail" placeholder="Email").review-form__input-txt
-				label(for='comment').visually-hidden Ваше сообщение
-				textarea(id='comment' name="comment" placeholder="Ваше сообщение").review-form__textarea
-				.review-form__btn-wrap
-					button(type='submit').review-form__btn
-						span.review-form__btn-text Отправить
-					button(type='reset').review-form__btn
-						span.review-form__btn-text Очистить
+			.reviews__form-wrap
+				h3.subtitle.reviews__form-title
+						.marked-title Связаться со мной
+				form(action="#" method="post" id='review-form').review-form
+					label(for='name').visually-hidden Имя
+					input(type='text' id='name' name="name" placeholder="Имя").review-form__input-txt
+					label(for='name').visually-hidden Email
+					input(type='email' id='mail' name="mail" placeholder="Email").review-form__input-txt
+					label(for='comment').visually-hidden Ваше сообщение
+					textarea(id='comment' name="comment" placeholder="Ваше сообщение").review-form__textarea
+					.review-form__btn-wrap
+						button(type='submit').review-form__btn
+							span.review-form__btn-text Отправить
+						button(type='reset').review-form__btn
+							span.review-form__btn-text Очистить
 		a(href='#prev').reviews__link-up
 			+icon('portf_arrow_up', 'reviews__link-icon')(width='26' height='16')
 
