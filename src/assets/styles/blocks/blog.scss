@@ -7,8 +7,12 @@
 	background-color: #fff;
 
 	&__sidebar {
+		position: sticky;
+		align-self: flex-start;
 		width: 25%;
+		top: 55px;
 		box-sizing: border-box;
+		transition: right 0.5s;
 
 		&::before {
 			position: absolute;
@@ -24,41 +28,41 @@
 			}
 		}
 
-		&::after {
-			position: absolute;
-			width: 60px;
-			height: 60px;
-			top: 50%;
-			left: 100%;
-			border-radius: 50%;
-			background-color: #00bfa5;
-			box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
-			transform: translate(-80%, -50%);
-			z-index: -2;
-
-			@include tablet {
-				content: '';
-			}
-		}
-
 		@include wide-desktop {
 			width: 20%;
 		}
 
 		@include tablet {
-			position: fixed;
+			position: absolute;
 			display: flex;
 			align-items: center;
 			padding-left: 10px;
 			width: 290px;
 			max-width: 80%;
 			height: 100vh;
-			top: 0;
-			// left: 0;
+			// top: 55px;
 			right: 105%;
 			background-color: #00bfa5;
 			box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
 			z-index: 10;
+		}
+	}
+
+	&__sidebar-btn {
+		position: absolute;
+		display: none;
+		width: 60px;
+		height: 60px;
+		top: 50%;
+		left: 100%;
+		border-radius: 50%;
+		background-color: #00bfa5;
+		box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+		transform: translate(-80%, -50%);
+		z-index: -2;
+
+		@include tablet {
+			display: block;
 		}
 	}
 

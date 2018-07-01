@@ -7,9 +7,10 @@
 		margin-bottom: 20px;
 		padding-right: 17px;
 		min-height: 40px;
+		border-right: 3px solid transparent;
 
 		&_active {
-			border-right: 3px solid #00bfa5;
+			border-right-color: #00bfa5;
 		}
 	}
 

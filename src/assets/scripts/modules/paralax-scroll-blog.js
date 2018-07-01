@@ -12,7 +12,7 @@ export let paralaxScroll = (function(options) {
   return {
     init: function(wScroll) {
       _scroll(bg, wScroll, 35);
-      _scroll(bgText, wScroll, 25);
+      _scroll(bgText, wScroll, 10);
     }
   };
 })({

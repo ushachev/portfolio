@@ -15,7 +15,7 @@ html(lang="ru")
 		.wrapper
 			block start-section
 				
-			main.maincontent(style="transform: translate3d(0px, 0.01%, 0px);")
+			main.maincontent
 				svg.maincontent__triangle-left(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangle) ? ` maincontent__triangle-left_${modTriangle}` : '')
 					polygon(points="0,0 0,110 600,110")
 				svg.maincontent__triangle-right(viewBox="0 0 600 110" preserveAspectRatio="none" class= (modTriangle) ? ` maincontent__triangle-right_${modTriangle}` : '')
@@ -33,4 +33,5 @@ html(lang="ru")
 	script(src='vendor.bundle.js')
 		
 	block scripts
+
 		
