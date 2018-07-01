@@ -8,35 +8,38 @@ export let preloader = (function(options) {
     percent = 0,
     percentShown = 0;
 
-  let _percentAnimation = function() {
+  let _percentAnimationTest = function() {
     let interval = setInterval(function() {
       percentShown++;
       perBlock.textContent = `${percentShown}%`;
       if (percentShown >= 100) {
         clearInterval(interval);
       }
-    }, 200);
-    // if (percent < 100) {
-    //   percentShown++;
-    //   percentBlock.textContent = `${percentShown}%`;
-    //   if (percentShown < percent) {
-    //     setTimeout(_percentAnimation, 50);
-    //   }
-    // } else if (percent == 100) {
-    //   percentBlock.textContent = `${percent}%`;
-    // }
+    }, 50);
+  };
+
+  let _percentAnimation = function() {
+    if (percent < 100) {
+      percentShown++;
+      percentBlock.textContent = `${percentShown}%`;
+      if (percentShown < percent) {
+        setTimeout(_percentAnimation, 50);
+      }
+    } else {
+      percentBlock.textContent = "100%";
+    }
   };
 
   let _imageLoaded = function() {
     imagesLoadedCount++;
     percent = ((imagesLoadedCount / imagesTotalCount) * 100) << 0;
-    percentBlock.textContent = `${percent}%`;
-    // _percentAnimation();
+    // percentBlock.textContent = `${percent}%`;
+    _percentAnimation();
   };
 
   return {
     set: function() {
-      _percentAnimation();
+      // _percentAnimationTest();
       for (let i = 0; i < imagesTotalCount; i++) {
         let imageClone = document.createElement("img");
         imageClone.onload = _imageLoaded;
@@ -48,7 +51,7 @@ export let preloader = (function(options) {
     load: function() {
       setTimeout(function() {
         preloader.classList.toggle(`${options.preloader}_loaded`);
-      }, 500);
+      }, 1000);
     }
   };
 })({
