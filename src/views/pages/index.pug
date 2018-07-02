@@ -60,7 +60,7 @@ block content
 						input(type='text' id='login' name="login" placeholder="Логин", required v-model.trim="parameters.login").login-form__input
 						label(for='login').login-form__label-txt.login-form__label-txt_log Логин
 					.login-form__input-row
-						input(type='password' id='pwd' name="pwd" placeholder="Пароль", required v-model.="parameters.pwd").login-form__input
+						input(type='password' id='pwd' name="pwd" placeholder="Пароль", required v-model="parameters.pwd").login-form__input
 						label(for='pwd').login-form__label-txt.login-form__label-txt_pwd Пароль
 					input(type="checkbox" id='human' v-model="parameters.human").login-form__check
 					label(for='human').login-form__label-check Я человек

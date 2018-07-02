@@ -1,6 +1,4 @@
-// import "./modules/login";
-// import Vue from "vue";
-// import axios from "axios";
+import "./modules/login";
 import { flip } from "./modules/flip";
 import { positionParalax, moveParalax } from "./modules/paralax";
 import { preloader } from "./modules/preloader";

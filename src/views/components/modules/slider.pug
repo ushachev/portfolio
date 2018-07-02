@@ -15,9 +15,22 @@ script(type="text/x-template")#slider
 script(type="text/x-template")#slider-info
   .galery__info
     h3.subtitle.galery__work-title
-      .marked-title.galery__marked-title {{work.title}}
-    .galery__work-techn
-      .galery__techn-text {{work.skills}}
+      transition-group(
+        tag="div"
+        :css="false"
+        @before-enter="callback('before-enter')"
+        @after-enter="callback('after-enter')"
+        @enter="enterHandlerWord"
+      ).galery__marked-title-container
+        .marked-title.galery__marked-title(:key="work.title") {{work.title}}
+    transition-group(
+      tag="div"
+      :css="false"
+      @before-enter="callback('before-enter')"
+      @after-enter="callback('after-enter')"
+      @enter="enterHandler"
+    ).galery__work-techn
+      .galery__techn-text(:key="work.skills") {{work.skills}}
     .galery__work-link
       a(:href="work.link" target="_blank").galery__link
         +icon('link', 'galery__link-icon')
@@ -25,7 +38,7 @@ script(type="text/x-template")#slider-info
 
 script(type="text/x-template")#slider-display
   .galery__preview
-    transition-group(name="fade" tag="div").galery__image-container
+    transition(name="fade" mode="out-in")
       img(:src="work.photo", alt="Фото превью сайта", :key="work.photo").galery__image
 
 script(type="text/x-template")#slider-buttons

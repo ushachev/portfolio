@@ -7,7 +7,35 @@ const info = {
   },
   methods: {
     callback(eventName) {
-      console.log(eventName);
+      // console.log(eventName);
+    },
+    enterHandlerWord(el, done) {
+      const sentence = el.innerText.trim();
+      const wrapped = sentence
+        .split(" ")
+        .map(item => {
+          return `
+            <span>${item}</span>
+          `;
+        })
+        .join(" ");
+
+      el.innerHTML = wrapped;
+      let i = 0;
+      function animate(words) {
+        const currentLetter = words[i];
+
+        let timer = setTimeout(() => {
+          animate(words);
+        }, 100);
+        currentLetter.classList.add("flipInX");
+        i++;
+        if (i >= words.length) {
+          clearTimeout(timer);
+          done();
+        }
+      }
+      animate(el.children);
     },
     enterHandler(el, done) {
       const sentence = el.innerText.trim();
@@ -21,9 +49,6 @@ const info = {
         .join("");
 
       el.innerHTML = wrapped;
-
-      const words = Array.from(el.children);
-
       let i = 0;
       function animate(words) {
         const currentLetter = words[i];
@@ -31,18 +56,15 @@ const info = {
         let timer = setTimeout(() => {
           animate(words);
         }, 20);
-
-        currentLetter.classList.add("bounceIn");
-
+        currentLetter.classList.add("flipInX");
         i++;
-
         if (i >= words.length) {
           clearTimeout(timer);
           done();
         }
       }
 
-      animate(words);
+      animate(el.children);
     }
   }
 };
