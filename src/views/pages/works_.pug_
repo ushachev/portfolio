@@ -14,7 +14,44 @@ block content
 	section(id='prev').galery
 		h1.title.galery__title
 			span.galery__title-text Мои работы
-		#galery-component
+		-
+			var works = [
+				['work-1.png',
+				{
+					url: 'demo.html', 
+					title: 'Сайт школы онлайн oбразования',
+					techn: 'HTML , CSS, JAVASCRIPT'
+				}, '3'],
+				['work-2.png',
+				{
+					url: 'demo.html', 
+					title: 'Сайт школы онлайн oбразования',
+					techn: 'HTML , CSS, JAVASCRIPT'
+				}, '4'],
+				['work-3.png',
+				{
+					url: 'demo.html', 
+					title: 'Сайт школы онлайн oбразования',
+					techn: 'HTML , CSS, JAVASCRIPT'
+				}, '1']
+			]
+
+		.galery__works
+			#galery-component
+			.galery__info
+				h3.subtitle.galery__work-title
+					.marked-title.galery__marked-title #{works[1][1].title}
+				.galery__work-techn
+					.galery__techn-text #{works[1][1].techn}
+				.galery__work-link
+					a(href=`${works[1][1].url}`).galery__link
+						+icon('link', 'galery__link-icon')
+						span Посмотреть сайт
+			.galery__preview
+				+image(works[1][0], 'Фото превью сайта', 'galery__image')
+			.galery__slider-links
+				button.galery__slider-link.galery__slider-link_prev(type='button', style=`background-image: url(assets/images/${works[0][0]})`)
+				button.galery__slider-link.galery__slider-link_next(type='button', style=`background-image: url(assets/images/${works[2][0]})`)
 	section.reviews
 		h2.title.reviews__title
 			.marked-title.reviews__marked-title Что обо мне говорят
@@ -44,11 +81,11 @@ block content
 			.reviews__form-wrap
 				h3.subtitle.reviews__form-title
 						.marked-title Связаться со мной
-				form(action="#" method="post" id='review-form' @submit.prevent="submitForm").review-form
+				form(action="#" method="post" id='review-form').review-form
 					label(for='name').visually-hidden Имя
-					input(type='text' id='name' name="name" placeholder="Имя" v-model.trim="parameters.name" required).review-form__input-txt
+					input(type='text' id='name' name="name" placeholder="Имя").review-form__input-txt
 					label(for='name').visually-hidden Email
-					input(type='email' id='mail' name="mail" placeholder="Email" v-model="parameters.email" required).review-form__input-txt
+					input(type='email' id='mail' name="mail" placeholder="Email").review-form__input-txt
 					label(for='comment').visually-hidden Ваше сообщение
 					textarea(id='comment' name="comment" placeholder="Ваше сообщение").review-form__textarea
 					.review-form__btn-wrap

@@ -9,13 +9,14 @@ export let preloader = (function(options) {
     percentShown = 0;
 
   let _percentAnimationTest = function() {
-    let interval = setInterval(function() {
-      percentShown++;
-      perBlock.textContent = `${percentShown}%`;
-      if (percentShown >= 100) {
-        clearInterval(interval);
-      }
-    }, 50);
+    let percentTest = 0,
+      interval = setInterval(function() {
+        percentTest++;
+        perBlock.textContent = `${percentTest}%`;
+        if (percentTest >= 100) {
+          clearInterval(interval);
+        }
+      }, 50);
   };
 
   let _percentAnimation = function() {
@@ -39,7 +40,7 @@ export let preloader = (function(options) {
 
   return {
     set: function() {
-      // _percentAnimationTest();
+      _percentAnimationTest();
       for (let i = 0; i < imagesTotalCount; i++) {
         let imageClone = document.createElement("img");
         imageClone.onload = _imageLoaded;
@@ -51,7 +52,7 @@ export let preloader = (function(options) {
     load: function() {
       setTimeout(function() {
         preloader.classList.toggle(`${options.preloader}_loaded`);
-      }, 1000);
+      }, 500);
     }
   };
 })({

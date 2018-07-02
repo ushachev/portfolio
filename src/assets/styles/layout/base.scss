@@ -339,7 +339,7 @@ img {
   border: 0;
   margin: 0;
   overflow: visible;
-  z-index: 100;
+  z-index: 50;
 
   &:hover {
     @if $hamburger-hover-use-filter == true {

@@ -115,6 +115,8 @@
 		margin: auto;
 		font-weight: 500;
 		color: #00bfa5;
+		text-transform: uppercase;
+		text-align: center;
 	}
 
 	&__link {
@@ -146,10 +148,11 @@
 
 	&__preview {
 		position: relative;
-		display: flex;
+		// display: flex;
 		width: 50%;
 		height: 75%;
 		background-color: $beige;
+		overflow: hidden;
 
 		@include tablet {
 			width: 100%;
@@ -168,7 +171,17 @@
 		}
 	}
 
+	&__image-container {
+		position: absolute;
+		display: flex;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
 	&__image {
+		display: block;
 		margin: auto;
 		height: 75%;
 		object-fit: contain;
@@ -178,6 +191,7 @@
 		display: flex;
 		width: 50%;
 		height: 25%;
+		overflow: hidden;
 
 		@include tablet {
 			width: 100%;
@@ -199,11 +213,6 @@
 		display: flex;
 		width: 50%;
 		height: 100%;
-		background-color: #f1ede1;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: contain;
-		overflow: hidden;
 
 		&::before {
 			position: absolute;
@@ -212,6 +221,7 @@
 			height: 100%;
 			top: 0;
 			left: 0;
+			z-index: 5;
 		}
 
 		&::after {
@@ -257,4 +267,90 @@
 			}
 		}
 	}
+
+	&__slider-pic-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__slider-pic {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #f1ede1;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		overflow: hidden;
+		z-index: 0;
+	}
+}
+
+.fade-leave-active {
+	transition: 0.5s;
+}
+
+.fade-enter-active {
+	transition: 0.7s 0.7s;
+}
+
+.fade-leave {
+	opacity: 1;
+}
+
+.fade-leave-to {
+	opacity: 0;
+}
+
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-to {
+	opacity: 1;
+}
+
+.slide-down-enter-active, .slide-down-leave-active {
+	transition: 0.5s linear;
+}
+
+.slide-down-leave {
+	bottom: 0%;
+}
+
+.slide-down-leave-to {
+	bottom: -100%;
+}
+
+.slide-down-enter {
+	bottom: 100%;
+}
+
+.slide-down-enter-to {
+	bottom: 0%;
+}
+
+.slide-up-enter-active, .slide-up-leave-active {
+	transition: 0.5s linear;
+}
+
+.slide-up-leave {
+	bottom: 0%;
+}
+
+.slide-up-leave-to {
+	bottom: 100%;
+}
+
+.slide-up-enter {
+	bottom: -100%;
+}
+
+.slide-up-enter-to {
+	bottom: 0%;
 }
