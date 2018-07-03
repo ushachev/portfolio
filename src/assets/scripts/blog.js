@@ -1,3 +1,4 @@
+import "./modules/smooth-scroll";
 import { menuOverlay } from "./modules/menu-overlay";
 import { paralaxScroll } from "./modules/paralax-scroll-blog";
 import { postMenuScroll } from "./modules/post-menu-scroll";

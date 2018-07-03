@@ -56,7 +56,7 @@ block content
 							span.review-form__btn-text Отправить
 						button(type='reset').review-form__btn
 							span.review-form__btn-text Очистить
-		a(href='#prev').reviews__link-up
+		a(href='#start' id="page-to-top" @click.prevent="moveUp").reviews__link-up
 			+icon('portf_arrow_up', 'reviews__link-icon')(width='26' height='16')
 
 block footer

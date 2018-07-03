@@ -1,5 +1,7 @@
 import "./modules/slider";
 import "./modules/feedback";
+import "./modules/smooth-scroll";
+import "./modules/smooth-scroll-up";
 import { blur } from "./modules/blur";
 import { menuOverlay } from "./modules/menu-overlay";
 import { paralaxScroll } from "./modules/paralax-scroll";
