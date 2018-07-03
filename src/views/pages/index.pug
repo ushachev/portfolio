@@ -56,6 +56,12 @@ block content
 				h2.subtitle.login__title
 					span.login__title-text Авторизуйтесь
 				form(action="#" method="post" id='login-form' @submit.prevent="submitForm" novalidate="true").login-form.login__form
+					transition(name="fade")
+						.login-form__modal-wrap(v-if="showModal")
+							.login-form__modal
+								img(src="assets/images/robot.jpg").login-form__modal-img
+								span.login-form__modal-text Боты пройти не смогут
+								button(type="button" @click="showModal = false").login-form__modal-btn
 					.login-form__input-row
 						.tooltip Вы не ввели логин
 						input(type='text' id='login' name="login" placeholder="Логин" required v-model.trim="parameters.login" @focus="deleteErrorClass($event)").login-form__input

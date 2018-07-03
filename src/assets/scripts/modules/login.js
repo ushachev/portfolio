@@ -5,6 +5,7 @@ new Vue({
   el: "#login-form",
   data() {
     return {
+      showModal: false,
       parameters: {
         login: "",
         pwd: "",
@@ -38,6 +39,10 @@ new Vue({
       if (!this.parameters.pwd) {
         let pwdInput = document.getElementById("pwd");
         this.addErrorClass(pwdInput);
+        return false;
+      }
+      if (!this.parameters.human || this.parameters.capcha === "no") {
+        this.showModal = true;
         return false;
       }
     },
