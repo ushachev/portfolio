@@ -6,6 +6,7 @@
 	color: rgba($text-color, .8);
 
 	&__input-row {
+		position: relative;
 		display: flex;
 		flex-direction: row-reverse;
 		margin-bottom: 20px;
@@ -44,6 +45,10 @@
 				.login-form__input:focus + & {
 					background-image: svg-load('login.svg', fill=#00bfa5);
 				}
+
+				.login-form__input.invalid + & {
+					background-image: svg-load('login.svg', fill=#e44845);
+				}
 			}
 		}
 
@@ -54,6 +59,10 @@
 
 				.login-form__input:focus + & {
 					background-image: svg-load('password.svg', fill=#00bfa5);
+				}
+
+				.login-form__input.invalid + & {
+					background-image: svg-load('password.svg', fill=#e44845);
 				}
 			}
 		}
@@ -80,6 +89,10 @@
 
 		&:focus {
 			border-color: #00bfa5;
+		}
+
+		&.invalid {
+			border-color: #e44845;
 		}
 
 		@include small-phone {

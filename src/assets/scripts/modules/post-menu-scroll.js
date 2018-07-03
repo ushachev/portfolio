@@ -70,7 +70,6 @@ export let postMenuScroll = (function(options) {
           postMenu.style.top = "auto";
           postMenu.style.bottom = "0";
         }
-        console.log(`выс. списка ${postListHeight}, скролл ${wScroll}`);
       } else {
         postMenu.style.position = "sticky";
         postMenu.style.top = `${postListMargin}px`;

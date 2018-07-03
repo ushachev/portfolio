@@ -17,6 +17,7 @@ script(type="text/x-template")#slider-info
     h3.subtitle.galery__work-title
       transition-group(
         tag="div"
+        appear
         :css="false"
         @before-enter="callback('before-enter')"
         @after-enter="callback('after-enter')"
@@ -25,6 +26,7 @@ script(type="text/x-template")#slider-info
         .marked-title.galery__marked-title(:key="work.title") {{work.title}}
     transition-group(
       tag="div"
+      appear
       :css="false"
       @before-enter="callback('before-enter')"
       @after-enter="callback('after-enter')"
