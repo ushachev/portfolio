@@ -18,7 +18,7 @@ const info = {
             <span>${item}</span>
           `;
         })
-        .join(" ");
+        .join("");
 
       el.innerHTML = wrapped;
       let i = 0;

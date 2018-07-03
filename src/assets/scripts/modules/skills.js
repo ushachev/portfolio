@@ -13,12 +13,19 @@ const skill = {
         getComputedStyle(circle).getPropertyValue("stroke-dasharray")
       );
       const persents = (dashOffset / 100) * (100 - this.skillPercents);
+      const trigger = window.innerHeight * 0.9,
+        posTop = this.$el.offsetTop;
+      let diff = trigger - posTop,
+        container = document.getElementById("next"),
+        containerPosTop = container.getBoundingClientRect().top;
 
-      circle.style.strokeDashoffset = persents;
+      if (containerPosTop <= diff) {
+        circle.style.strokeDashoffset = persents;
+      }
     }
   },
   mounted() {
-    this.drawCircle();
+    window.addEventListener("scroll", this.drawCircle);
   }
 };
 

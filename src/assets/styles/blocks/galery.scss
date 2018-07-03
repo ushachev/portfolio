@@ -273,10 +273,6 @@
 
 			&:hover::after {
 				transform: translateY(-3vh);
-
-				@include small-phone {
-					// transform: translateY(-30px);
-				}
 			}
 		}
 	}
