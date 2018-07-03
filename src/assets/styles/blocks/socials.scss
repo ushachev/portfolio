@@ -1,0 +1,54 @@
+.socials {
+	display: flex;
+
+	&__item {
+		display: flex;
+		align-items: center;
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__link {
+		opacity: 0.5;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&__icon {
+		fill: #fff;
+
+		&_vk {
+			width: 31px;
+			height: 17px;
+
+			@include small-phone {
+				width: 25px;
+				height: 14px;
+			}
+		}
+
+		&_github {
+			width: 26px;
+			height: 22px;
+
+			@include small-phone {
+				width: 21px;
+				height: 18px;
+			}
+		}
+
+		&_in {
+			width: 24px;
+			height: 22px;
+
+			@include small-phone {
+				width: 19px;
+				height: 18px;
+			}
+		}
+	}
+}

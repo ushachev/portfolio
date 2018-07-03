@@ -1,6 +1,89 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+	.preloader
+		span.preloader__per 1000%
+		span.preloader__percent 0%
+		.preloader__loader
+	.paralax
+		.paralax__layer
+			+image('paralax/layer1.png', '', 'paralax__image paralax__image_1')
+		.paralax__layer
+			+image('paralax/layer2.png', '', 'paralax__image paralax__image_2')
+		.paralax__layer
+			+image('paralax/layer3.png', '', 'paralax__image paralax__image_3')
+		.paralax__layer
+			+image('paralax/layer4.png', '', 'paralax__image paralax__image_4')
+		.paralax__layer
+			+image('paralax/layer5.png', '', 'paralax__image paralax__image_5')
+		.paralax__layer
+			+image('paralax/layer6.png', '', 'paralax__image paralax__image_6')
+		.paralax__layer
+			+image('paralax/layer7.png', '', 'paralax__image paralax__image_7')
+		.paralax__layer
+			+image('paralax/layer8.png', '', 'paralax__image paralax__image_8')
+		.paralax__layer
+			+image('paralax/layer9.png', '', 'paralax__image paralax__image_9')
+		.paralax__layer
+			+image('paralax/layer10.png', '', 'paralax__image paralax__image_10')
+	h1.visually-hidden Виталий Ушачёв
+		span Личный сайт веб разработчика
+	button(type='button').auth-btn Авторизоваться
+	.container-index
+		.flip-wrapper
+			.welcome
+				.author.welcome__author
+					.author-foto
+						+image('me_.jpg', 'Фото Виталий Ушачёв', 'author-foto__image')
+					.author__name.author__name_welcome Виталий Ушачёв
+					.author__subtitle Личный сайт веб разработчика
+				+socials('', 'welcome__socials')(width='30' height='26')
+				-
+					var menuItems = [
+						{
+							name: 'Мои работы',
+							url: 'works.html'
+						},{
+							name: 'Обо мне',
+							url: 'about.html'
+						},{
+							name: 'Блог',
+							url: 'blog.html'
+						}
+					]
+				+nav('welcome', menuItems)
+			.login
+				h2.subtitle.login__title
+					span.login__title-text Авторизуйтесь
+				form(action="#" method="post" id='login-form' @submit.prevent="submitForm" novalidate="true").login-form.login__form
+					transition(name="fade")
+						.login-form__modal-wrap(v-if="showModal")
+							.login-form__modal
+								img(src="assets/images/robot.jpg").login-form__modal-img
+								span.login-form__modal-text Боты пройти не смогут
+								button(type="button" @click="showModal = false").login-form__modal-btn
+					.login-form__input-row
+						.tooltip Вы не ввели логин
+						input(type='text' id='login' name="login" placeholder="Логин" required v-model.trim="parameters.login" @focus="deleteErrorClass($event)").login-form__input
+						label(for='login').login-form__label-txt.login-form__label-txt_log Логин
+					.login-form__input-row
+						.tooltip Вы не ввели пароль
+						input(type='password' id='pwd' name="pwd" placeholder="Пароль" required v-model="parameters.pwd" @focus="deleteErrorClass($event)").login-form__input
+						label(for='pwd').login-form__label-txt.login-form__label-txt_pwd Пароль
+					input(type="checkbox" id='human' v-model="parameters.human").login-form__check
+					label(for='human').login-form__label-check Я человек
+					fieldset.login-form__capcha
+						legend.login-form__capcha-title Вы точно не робот?
+						.login-form__label-wrap
+							input(type="radio" id='yes' name='capcha' value='yes' v-model="parameters.capcha").login-form__radio
+							label(for='yes').login-form__label-radio.login-form__label_left Да
+							input(type="radio" id='no' name='capcha' value='no' v-model="parameters.capcha").login-form__radio
+							label(for='no').login-form__label-radio Не уверен
+					.login-form__btn-wrap
+						button(type='button' id='index-btn').login-form__btn
+							span.login-form__btn-text На главную
+						button(type='submit').login-form__btn
+							span.login-form__btn-text Войти
+	small.copy
+		span © Виталий Ушачёв
+		span создано с любовью в LoftSchool | 2018

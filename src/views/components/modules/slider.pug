@@ -1,0 +1,53 @@
+script(type="text/x-template")#slider
+  .galery__works
+    info(
+      :work="currentWork"
+    )
+    display(
+      :work="currentWork"
+    )
+    buttons(
+      :works="works"
+      :currentIndex="currentIndex"
+      @slide="handleSlide"
+    )
+    
+script(type="text/x-template")#slider-info
+  .galery__info
+    h3.subtitle.galery__work-title
+      transition-group(
+        tag="div"
+        appear
+        :css="false"
+        @before-enter="callback('before-enter')"
+        @after-enter="callback('after-enter')"
+        @enter="enterHandlerWord"
+      ).galery__marked-title-container
+        .marked-title.galery__marked-title(:key="work.title") {{work.title}}
+    transition-group(
+      tag="div"
+      appear
+      :css="false"
+      @before-enter="callback('before-enter')"
+      @after-enter="callback('after-enter')"
+      @enter="enterHandler"
+    ).galery__work-techn
+      .galery__techn-text(:key="work.skills") {{work.skills}}
+    .galery__work-link
+      a(:href="work.link" target="_blank").galery__link
+        +icon('link', 'galery__link-icon')
+        span Посмотреть сайт
+
+script(type="text/x-template")#slider-display
+  .galery__preview
+    transition(name="fade" mode="out-in")
+      img(:src="work.photo", alt="Фото превью сайта", :key="work.photo").galery__image
+
+script(type="text/x-template")#slider-buttons
+  .galery__slider-links
+    button.galery__slider-link.galery__slider-link_prev(type='button', @click="slide('prev')")
+      transition-group(name="slide-down" tag="div").galery__slider-pic-container
+        .galery__slider-pic(:style="{ 'background-image': 'url(' + getReqImage('prev').photo + ')' }", :key="getReqImage('prev').photo")
+    button.galery__slider-link.galery__slider-link_next(type='button', @click="slide('next')")
+      transition-group(name="slide-up" tag="div").galery__slider-pic-container
+        .galery__slider-pic(:style="{ 'background-image': 'url(' + getReqImage('next').photo + ')' }", :key="getReqImage('next').photo")

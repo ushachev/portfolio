@@ -1,0 +1,46 @@
+.paralax {
+	position: fixed;
+
+	&__layer {
+		position: absolute;
+		top: 0;
+		left: -5%;
+		right: -5%;
+		bottom: 0;
+	}
+
+	&__image {
+		position: absolute;
+		height: auto;
+
+		&_1 {
+			width: auto;
+			max-width: none;
+			max-height: none;
+		}
+
+		&_2, &_3, &_5, &_6, &_8, &_9 {
+			left: 0;
+			bottom: -10%;
+			width: 100%;
+		}
+
+		&_4 {
+			bottom: 58%;
+			left: 67.9%;
+			width: 16.9%;
+		}
+
+		&_7 {
+			bottom: 42%;
+			left: 33.5%;
+			width: 21.7%;
+		}
+
+		&_10 {
+			bottom: -5%;
+			left: -8.1%;
+			width: 83.1%;
+		}	
+	}
+}
