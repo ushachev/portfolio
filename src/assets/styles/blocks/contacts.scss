@@ -10,6 +10,7 @@
 	transform: translate(-50%, -50%);
 	border-radius: 5px;
 	background-color: rgba(#fff, 0.85);
+	z-index: 10;
 
 	@include tablet {
 		top: 40%;

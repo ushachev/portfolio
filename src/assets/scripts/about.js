@@ -1,5 +1,6 @@
 import "./modules/skills";
 import "./modules/smooth-scroll";
+import { initMap } from "./modules/map";
 import { menuOverlay } from "./modules/menu-overlay";
 import { paralaxScroll } from "./modules/paralax-scroll";
 import { preloader } from "./modules/preloader";
@@ -15,3 +16,5 @@ window.onscroll = function() {
 window.onload = function() {
   preloader.load();
 };
+
+window.initMap = initMap;

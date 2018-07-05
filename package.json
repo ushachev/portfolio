@@ -70,6 +70,7 @@
     "not ie <= 8"
   ],
   "dependencies": {
+    "@google/maps": "^0.5.3",
     "axios": "^0.18.0",
     "normalize.css": "^7.0.0",
     "promptly": "^3.0.3",
