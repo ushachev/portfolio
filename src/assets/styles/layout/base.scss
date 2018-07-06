@@ -13,7 +13,7 @@ body {
 
 	&.scroll-off {
 		height: 100%;
-		overflow: hidden;
+		overflow-y: hidden;
 	}
 
 	@include tablet {

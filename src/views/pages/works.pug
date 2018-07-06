@@ -44,13 +44,21 @@ block content
 			.reviews__form-wrap
 				h3.subtitle.reviews__form-title
 						.marked-title Связаться со мной
-				form(action="#" method="post" id='review-form' @submit.prevent="submitForm").review-form
-					label(for='name').visually-hidden Имя
-					input(type='text' id='name' name="name" placeholder="Имя" v-model.trim="parameters.name" required).review-form__input-txt
-					label(for='name').visually-hidden Email
-					input(type='email' id='mail' name="mail" placeholder="Email" v-model="parameters.email" required).review-form__input-txt
+				form(action="#" method="post" id='review-form' @submit.prevent="submitForm" novalidate="true").review-form
+					transition(name="fade")
+						.review-form__modal-wrap(v-if="showModal" @click="closeModal")
+							.review-form__modal
+								span.review-form__modal-text {{modalMessage}}
+								button(type="button" @click="closeModal").review-form__modal-btn Закрыть
+					label(for='name').review-form__label-txt
+						span.visually-hidden Имя
+						input(v-model.trim="parameters.name" type='text' id='name' name="name" placeholder="Имя" required).review-form__input-txt
+					label(for='name').review-form__label-txt
+						span.visually-hidden Email
+						input(v-model="parameters.email" @focus="deleteErrorClass($event)" type='email' id='mail' name="mail" placeholder="Email" required).review-form__input-txt
+						.tooltip Некорректный Email
 					label(for='comment').visually-hidden Ваше сообщение
-					textarea(id='comment' name="comment" placeholder="Ваше сообщение").review-form__textarea
+					textarea(id='comment' name="comment" placeholder="Ваше сообщение" v-model="parameters.feed" required).review-form__textarea
 					.review-form__btn-wrap
 						button(type='submit').review-form__btn
 							span.review-form__btn-text Отправить

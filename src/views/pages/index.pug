@@ -57,7 +57,7 @@ block content
 					span.login__title-text Авторизуйтесь
 				form(action="#" method="post" id='login-form' @submit.prevent="submitForm" novalidate="true").login-form.login__form
 					transition(name="fade")
-						.login-form__modal-wrap(v-if="showModal")
+						.login-form__modal-wrap(v-if="showModal" @click="showModal = false")
 							.login-form__modal
 								img(src="assets/images/robot.jpg").login-form__modal-img
 								span.login-form__modal-text Боты пройти не смогут
