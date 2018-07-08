@@ -128,5 +128,11 @@ ul {
   &:hover {
     background-color: #009688;
   }
+
+  &_del {
+    align-self: center;
+    margin-left: 20px;
+    padding: 7px 10px;
+  }
 }
 </style>

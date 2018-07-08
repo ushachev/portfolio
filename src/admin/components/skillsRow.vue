@@ -36,18 +36,6 @@ export default {
       default: () => []
     }
   }
-  // mehtods: {
-  //   fromNameToNum(name) {
-  //     switch (name) {
-  //       case "frontend":
-  //         return 0;
-  //       case "backend":
-  //         return 1;
-  //       case "workflow":
-  //         return 2;
-  //     }
-  //   }
-  // }
 };
 </script>
 <style lang="scss">

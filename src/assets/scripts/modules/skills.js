@@ -49,14 +49,31 @@ new Vue({
     skills: {}
   },
   created() {
-    // const data = require("../../../data/skills.json");
     axios
       .get("http://webdev-api.loftschool.com/skills/7")
       .then(response => {
-        this.skills = response.data;
+        const temp = response.data;
+        const data = [
+          { skillsGroup: "Frontend", skills: {} },
+          { skillsGroup: "Backend", skills: {} },
+          { skillsGroup: "Workflow", skills: {} }
+        ];
+        temp.forEach(skill => {
+          switch (skill.category) {
+            case 0:
+              data[0].skills[skill.title] = skill.percents;
+              break;
+            case 1:
+              data[1].skills[skill.title] = skill.percents;
+              break;
+            case 2:
+              data[2].skills[skill.title] = skill.percents;
+              break;
+          }
+        });
+        this.skills = data;
       })
       .catch(e => console.error(e));
-    // this.skills = data;
   },
   template: "#skills-list"
 });

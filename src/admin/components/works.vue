@@ -1,24 +1,31 @@
 <template lang="pug">
   div
     h1.title Страница "Мои работы"
-    .subtitle Добавить работу
-    input(type="text" placeholder="Название проекта" v-model="work.title").input-txt.input-txt_works
-    br
-    input(type="text" placeholder="Технологии" v-model="work.techs").input-txt.input-txt_works
-    br
-    input(type="text" placeholder="Ссылка" v-model="work.link").input-txt.input-txt_works
-    br
-    .upload
-      label.upload__label
-        input(type="file" @change="addPhoto").upload__btn
-        span.upload__text Загрузить картинку
-    br
-    button(@click="addNewWork").button Добавить работу
+    .works
+      workRow
+      .works__adding
+        .subtitle Добавить работу
+        input(type="text" placeholder="Название проекта" v-model="work.title").input-txt.input-txt_works
+        br
+        input(type="text" placeholder="Технологии" v-model="work.techs").input-txt.input-txt_works
+        br
+        input(type="text" placeholder="Ссылка" v-model="work.link").input-txt.input-txt_works
+        br
+        .upload
+          label.upload__label
+            input(type="file" @change="addPhoto").upload__btn
+            span.upload__text Загрузить картинку
+        br
+        button(@click="addNewWork").button Добавить работу
 </template>
 
 <script>
+import workRow from "./workRow";
 import { mapActions } from "vuex";
 export default {
+  components: {
+    workRow
+  },
   data() {
     return {
       work: {
@@ -50,6 +57,25 @@ export default {
 };
 </script>
 <style lang="scss">
+.works {
+  display: flex;
+
+  &__added {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+    width: 50%;
+  }
+
+  &__work {
+    margin-bottom: 20px;
+  }
+
+  &__adding {
+    width: 50%;
+  }
+}
+
 .upload {
   &__label {
     display: block;
