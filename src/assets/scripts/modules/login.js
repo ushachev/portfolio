@@ -11,6 +11,10 @@ new Vue({
         pwd: "",
         human: "",
         capcha: ""
+      },
+      user: {
+        name: "",
+        password: ""
       }
     };
   },
@@ -47,15 +51,22 @@ new Vue({
       }
     },
     submitForm() {
-      let url = "https://jsonplaceholder.typicode.com/posts";
+      let url = "http://webdev-api.loftschool.com/login";
       if (this.checkForm()) {
+        this.user.name = this.parameters.login;
+        this.user.password = this.parameters.pwd;
         axios
-          .post(url, this.parameters)
+          .post(url, this.user)
           .then(response => {
-            console.log(JSON.stringify(response, null, 2));
+            if (response.status === 200) {
+              const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+              localStorage.setItem("token", response.data.token);
+              localStorage.setItem("ttl", ttl);
+              window.location.href = "/admin";
+            }
           })
           .catch(error => {
-            console.log(error);
+            console.error(error);
           });
       }
     }
