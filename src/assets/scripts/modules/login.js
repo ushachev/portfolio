@@ -45,7 +45,7 @@ new Vue({
         this.addErrorClass(pwdInput);
         return false;
       }
-      if (!this.parameters.human || this.parameters.capcha === "no") {
+      if (!this.parameters.human || this.parameters.capcha !== "yes") {
         this.showModal = true;
         return false;
       }

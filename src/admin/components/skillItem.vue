@@ -1,24 +1,24 @@
 <template lang="pug">
-  tr(v-if="!editmode")
+  tr.row1(v-if="!editmode")
     td {{skill.title}}
-    td
+    td.column2
       span {{skill.percents}} %
-    td
-      button(type="button" @click="removeItem") удалить
+    td.column3
+      button(type="button" @click="removeItem").button.button_del &#10006
   tr(v-else)
     td 
       input(
         type="text" 
         v-model="newSkill.title"
-      )
-    td
+      ).input-txt.input-txt_skill
+    td.column2
       input(
         type="text"
         v-model="newSkill.percents" 
-      )
+      ).input-txt.input-txt_percent
       span %
-    td 
-      button(type="button" @click="addSkill") Добавить
+    td.column3
+      button(type="button" @click="addSkill").button Добавить
 </template>
 
 <script>
@@ -61,3 +61,18 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.row1 {
+  height: 50px;
+  padding-bottom: 20px;
+}
+
+.column2 {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.column3 {
+  text-align: right;
+}
+</style>

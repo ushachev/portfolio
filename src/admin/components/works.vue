@@ -51,7 +51,11 @@ export default {
         formData.append(prop, this.work[prop]);
       });
 
-      this.addWork(formData);
+      this.addWork(formData).then(r => {
+        this.work.title = "";
+        this.work.techs = "";
+        this.work.link = "";
+      });
     }
   }
 };
@@ -72,7 +76,9 @@ export default {
   }
 
   &__adding {
+    padding-left: 50px;
     width: 50%;
+    border-left: 1px solid $green;
   }
 }
 

@@ -1,8 +1,8 @@
 <template lang="pug">
   .works__work.work
-    .work__title {{work.title}}
     .work__preview
       img(:src="srcSet()").work__img
+    .work__title {{work.title}}
     button(type="button" @click="removeItem").button.button_del &#10006
 </template>
 <script>
@@ -36,6 +36,7 @@ export default {
   }
 
   &__preview {
+    margin-right: 20px;
     width: 100px;
     height: 100px;
     border: 1px solid $green;

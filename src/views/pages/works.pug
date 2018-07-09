@@ -52,13 +52,13 @@ block content
 								button(type="button" @click="closeModal").review-form__modal-btn Закрыть
 					label(for='name').review-form__label-txt
 						span.visually-hidden Имя
-						input(v-model.trim="parameters.name" type='text' id='name' name="name" placeholder="Имя" required).review-form__input-txt
+						input(v-model.trim="parameters.name" type='text' id='name' name="name" placeholder="Имя*" required).review-form__input-txt
 					label(for='name').review-form__label-txt
 						span.visually-hidden Email
-						input(v-model="parameters.email" @focus="deleteErrorClass($event)" type='email' id='mail' name="mail" placeholder="Email" required).review-form__input-txt
+						input(v-model="parameters.email" @focus="deleteErrorClass($event)" type='email' id='mail' name="mail" placeholder="Email*" required).review-form__input-txt
 						.tooltip Некорректный Email
 					label(for='comment').visually-hidden Ваше сообщение
-					textarea(id='comment' name="comment" placeholder="Ваше сообщение" v-model="parameters.feed" required).review-form__textarea
+					textarea(id='comment' name="comment" placeholder="Ваше сообщение*" v-model="parameters.feed" required).review-form__textarea
 					.review-form__btn-wrap
 						button(type='submit').review-form__btn
 							span.review-form__btn-text Отправить

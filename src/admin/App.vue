@@ -82,6 +82,16 @@ ul {
   &_works {
     width: 400px;
   }
+
+  &_percent {
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: 70px;
+  }
+
+  &_skill {
+    margin-bottom: 0;
+  }
 }
 
 .button {
