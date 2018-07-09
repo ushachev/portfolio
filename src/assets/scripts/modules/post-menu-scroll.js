@@ -1,4 +1,4 @@
-export let postMenuScroll = (function(options) {
+export let postMenuScroll = function(options) {
   const postListMargin = 55;
   let postMenu = document.querySelector(options.postMenu),
     postList = document.querySelector(options.postList),
@@ -93,10 +93,4 @@ export let postMenuScroll = (function(options) {
       });
     }
   };
-})({
-  postMenu: ".blog__sidebar",
-  postList: ".blog__list",
-  menuBtn: ".blog__sidebar-btn",
-  menuItem: "post-menu__item",
-  postTitle: ".post__title"
-});
+};

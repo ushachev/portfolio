@@ -47,9 +47,6 @@ export default {
       }
     };
   },
-  // computed: {
-  //   ...mapGetters(["userId"])
-  // },
   methods: {
     ...mapActions(["addNewSkill", "removeExistedSkill"]),
     addSkill() {

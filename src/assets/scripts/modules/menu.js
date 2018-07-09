@@ -11,7 +11,6 @@ new Vue({
       .get("http://webdev-api.loftschool.com/posts/7")
       .then(response => {
         this.posts = response.data;
-        console.log(this.posts);
       })
       .catch(e => console.error(e));
   },

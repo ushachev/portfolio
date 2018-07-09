@@ -6,23 +6,36 @@ import { paralaxScroll } from "./modules/paralax-scroll-blog";
 import { postMenuScroll } from "./modules/post-menu-scroll";
 import { preloader } from "./modules/preloader";
 
+const scrollObj = {
+  postMenu: ".blog__sidebar",
+  postList: ".blog__list",
+  menuBtn: ".blog__sidebar-btn",
+  menuItem: "post-menu__item",
+  postTitle: ".post__title"
+};
+
 menuOverlay.init();
 
 preloader.set();
 
 window.onload = function() {
+  const scrollBlog = postMenuScroll(scrollObj);
+
   preloader.load();
-  postMenuScroll.set();
+  scrollBlog.set();
+
+  window.onscroll = function() {
+    let wScroll = window.pageYOffset;
+
+    scrollBlog.init(wScroll);
+    scrollBlog.indicate(wScroll);
+  };
 };
 
 window.onscroll = function() {
-  let wScroll = window.pageYOffset;
-
-  paralaxScroll.init(wScroll);
-  postMenuScroll.init(wScroll);
-  postMenuScroll.indicate(wScroll);
+  paralaxScroll.init(window.pageYOffset);
 };
 
 window.onresize = function() {
-  postMenuScroll.hide();
+  postMenuScroll(scrollObj).hide();
 };
