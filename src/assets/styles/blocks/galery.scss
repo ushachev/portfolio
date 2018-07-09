@@ -71,7 +71,6 @@
 		@include landscape {
 			flex-basis: 75%;
 			width: 50%;
-			// height: 75%;
 		}
 	}
 
@@ -81,10 +80,6 @@
 		@include tablet {
 			max-width: 55%;
 		}
-	}
-
-	&__marked-title-container {
-		// display: flex;
 	}
 
 	&__marked-title.marked-title {
@@ -186,7 +181,6 @@
 		@include landscape {
 			flex-basis: 100%;
 			width: 50%;
-			// height: 100%;
 		}
 	}
 

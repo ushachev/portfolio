@@ -8,6 +8,7 @@ import skills from "./components/skills.vue";
 import header from "./components/header.vue";
 import tabs from "./components/tabs.vue";
 import works from "./components/works.vue";
+import blogs from "./components/blog.vue";
 
 const routes = [
   {
@@ -22,6 +23,14 @@ const routes = [
     path: "/works",
     components: {
       default: works,
+      header: header,
+      tabs: tabs
+    }
+  },
+  {
+    path: "/blog",
+    components: {
+      default: blogs,
       header: header,
       tabs: tabs
     }
@@ -46,7 +55,7 @@ router.beforeEach((to, from, next) => {
     })
     .catch(error => {
       console.log("error in router");
-      // localStorage.removeItem("token");
+      localStorage.removeItem("token");
       window.location.href = "/";
     });
 });

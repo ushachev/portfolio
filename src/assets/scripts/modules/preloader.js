@@ -40,7 +40,7 @@ export let preloader = (function(options) {
 
   return {
     set: function() {
-      _percentAnimationTest();
+      // _percentAnimationTest();
       for (let i = 0; i < imagesTotalCount; i++) {
         let imageClone = document.createElement("img");
         imageClone.onload = _imageLoaded;

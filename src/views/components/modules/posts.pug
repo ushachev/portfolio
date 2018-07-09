@@ -1,0 +1,8 @@
+script(type="text/x-template")#posts-list
+	ul.blog__list
+		li.blog__item(v-for="post in posts")
+			article.post
+				header.post__header
+					h2.subtitle.post__title {{post.title}}
+					time.post__date {{dataView(post.date)}}
+				.post__content {{post.content}}	

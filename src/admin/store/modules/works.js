@@ -14,11 +14,6 @@ const works = {
     }
   },
   actions: {
-    add_Work(store, work) {
-      return this.$axios.post("/works", work).then(response => {
-        console.log("work was added", response);
-      });
-    },
     addWork({ commit }, work) {
       console.log(work);
       return this.$axios.post("/works", work).then(response => {
