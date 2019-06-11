@@ -1,0 +1,36 @@
+extends ../main.layout.pug
+
+block variables
+	-
+		var title = 'Блог'
+
+block scripts
+	script(src='blog.bundle.js')
+
+block start-section
+	section.start
+		.start__bg
+		.container.container_start
+			header.header
+				+nav('header', menuItems)
+				+socials('', 'header__socials')(width='30' height='26')
+				button(type='button').hamburger.hamburger_slider
+					span.hamburger-box
+						span.hamburger-inner
+			.start__info.start__info_blog
+				.author-foto
+					+image('me_.jpg', 'Фото Виталий Ушачёв', 'author-foto__image')
+				h1.title.start__title
+					span.start__title-text Блог
+					span.start__subtitle Статьи, которые я написал
+block content
+	section.blog
+		h2.visually-hidden Список статей
+		.container.container_blog
+			aside.blog__sidebar
+				#menu-container
+				button(type='button').blog__sidebar-btn
+			#posts-container
+
+block footer
+	include ../common/footer.pug

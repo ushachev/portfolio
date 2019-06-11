@@ -1,0 +1,71 @@
+.review {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+
+	&__content {
+		position: relative;
+		margin-bottom: 20px;
+
+		q {
+			quotes: none;
+		}
+
+		&::before {
+			position: absolute;
+			content: '';
+			width: 33px;
+			height: 29px;
+			top: -50px;
+			background-image: svg-load('quote-left.svg', fill=rgba(#373e42, .2));
+			background-repeat: no-repeat;
+			background-position: center;
+
+			@include tablet {
+				top: -40px;
+			}
+
+			@include phone {
+				left: 49%;
+			}
+		}
+
+		@include tablet {
+			margin-bottom: 13px;
+		}
+	}
+
+	&__author {
+		display: flex;
+		align-items: center;
+	}
+
+	&__author-foto {
+		flex-shrink: 0;
+		margin-right: 20px;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		@include phone {
+			width: 53px;
+			height: 53px;
+		}
+	}
+
+	&__image {
+		object-fit: cover;
+	}
+
+	&__author-title {
+		align-self: center;
+		line-height: 24px;
+		color: #00bfa5;
+	}
+
+	&__author-name {
+		font-weight: 700;
+	}
+}

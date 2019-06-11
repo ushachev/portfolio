@@ -1,0 +1,30 @@
+.auth-btn {
+	position: absolute;
+	top: 25px;
+	right: 20px;
+	padding: 14px 28px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	font-family: 'Roboto', Helvetica, sans-serif;
+	font-weight: 500;
+	color: #fff;
+
+	&:hover {
+		color: #00bfa5;
+		background-color: #fff;
+	}
+
+	&_clicked {
+		display: none;
+	}
+
+	@include phone {
+		right: 50%;
+		transform: translateX(50%);
+	}
+
+	@include small-phone {
+		top: 10px;
+		padding: 11px 19px;
+	}
+}

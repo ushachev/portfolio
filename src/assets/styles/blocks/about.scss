@@ -1,0 +1,195 @@
+.about {
+	position: relative;
+	display: flex;
+	
+	@include tablet {
+		flex-direction: column;
+	}
+	
+	&__left {
+		display: flex;
+		justify-content: flex-end;
+		padding-bottom: 40px;
+		width: 50%;
+		background-color: $white;
+
+		@include tablet {
+			justify-content: center;
+			width: 100%;
+		}
+
+		@include phone {
+			padding-bottom: 5px;
+		}
+	}
+
+	&__container-left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		max-width: 912px;
+		padding-left: 3%;
+		padding-right: 35px;
+
+		@include wide-desktop {
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: flex-start;
+			padding-right: 35px;
+		}
+
+		@include tablet {
+			padding: 0;
+		}
+
+		@include phone {
+			max-width: 480px;
+		}
+	}
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 27px;
+		width: 357px;
+		height: 125px;
+
+		&::before {
+			background-image: svg-load('about_header.svg', fill=#6d7070);
+		}
+
+		@include wide-desktop {
+			margin-top: -20px;
+			margin-right: 25px;
+		}
+
+		@include tablet {
+			padding-top: 0;
+			height: 90px;
+		}
+
+		@include small-phone {
+			height: 70px;
+		}
+	}
+
+	&__title-text {
+		@include marked;
+		white-space: nowrap;
+
+		&_with-bg {
+			padding-top: 27px;
+
+			&::before,
+			&::after {
+				margin-top: 11px;
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 30px;
+
+		@include tablet {
+			margin-top: 24px;
+		}
+
+		@include small-phone {
+			margin-top: 15px;
+		}
+	}
+
+	&__author-foto {
+		margin-bottom: 35px;
+		max-width: 446px;
+		height: 393px;
+
+		@include phone {
+			margin-bottom: 25px;
+			width: 100%;
+			max-width: none;
+		}
+
+		@include small-phone {
+			height: 280px;
+		}
+	}
+
+	&__author-image {
+		object-fit: cover;
+	}
+
+	&__subtitle {
+		margin-bottom: 30px;
+		width: 89%;
+		text-align: center;
+
+		@include tablet {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__about-me {
+		max-width: 450px;
+
+		p {
+			margin-bottom: 20px;
+		}
+
+		@include phone {
+			width: 95%;
+			max-width: none;
+		}
+	}
+
+	&__right {
+		padding-top: 45px;
+		padding-bottom: 15px;
+		width: 50%;
+		background-color: $beige;
+
+		@include tablet {
+			width: 100%;
+		}
+
+		@include phone {
+			padding-top: 25px;
+		}
+	}
+
+	&__container-right {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		padding-left: 35px;
+		padding-right: 2%;
+		max-width: 912px;
+
+		@include tablet{
+			align-items: center;
+			padding: 0;
+			width: 95%;
+		}
+	}
+
+	&__about-skills {
+		width: 89%;
+		margin-bottom: 30px;
+
+		@include tablet {
+			margin-left: 0;
+			margin-bottom: 20px;
+			width: 75%;
+			text-align: center;
+		}
+
+		@include phone {
+			margin-bottom: 0;
+		}
+	}
+}
