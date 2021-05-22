@@ -1,0 +1,12 @@
+header.header
+	.container.container_header
+		.header__top
+			+socials('', 'header__socials')(width='30' height='26')
+			button(type='button').hamburger-btn
+				+icon('hamburger', 'hamburger-btn__icon')(width='40' height='35')
+		.header__info
+			include author.pug
+		a(href='#next').header__link
+			+icon('arrow_down', 'header__link-icon')(width='26' height='16')
+
+			

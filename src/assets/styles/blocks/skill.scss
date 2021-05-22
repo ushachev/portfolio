@@ -1,0 +1,42 @@
+.skill {
+	display: block;
+	position: relative;
+	margin: 0;
+	width: 110px;
+	height: 110px;
+
+
+	&__figure {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%; 
+		transform: rotate(-90deg);
+	}
+
+	&__circle {
+		fill: transparent;
+		stroke: #ccc;
+		stroke-width: 20px; 
+	}
+
+	&__circle_above {
+		stroke: $green;
+		stroke-dasharray: 251;
+		stroke-dashoffset: 75;
+	}
+
+	&__title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 13px;
+		font-weight: 500;
+		line-height: 15px;
+		color: #00bfa5;
+		text-align: center;
+
+	}
+}

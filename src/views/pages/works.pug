@@ -1,0 +1,104 @@
+extends ../main.layout.pug
+
+block variables
+	-
+		var title = 'Мои работы'
+
+block scripts
+	script(src='works.bundle.js')
+
+block header
+	include ../common/header.pug
+
+block content
+	section(id='prev').galery
+		svg.about__triangles-left(viewBox="0 0 600 110" preserveAspectRatio="none")
+			polygon(points="0,0 0,110 600,110")
+		svg.about__triangles-right(viewBox="0 0 600 110" preserveAspectRatio="none")
+			polygon(points="600,0 600,110 0,110")
+		h1.title.galery__title
+			span.galery__title-text Мои работы
+		-
+			var works = [
+				['preview-foto1.png',
+				'preview-link1.jpg',
+				{
+					url: 'demo.html', 
+					title: 'Сайт школы онлайн oбразования',
+					techn: 'HTML , CSS, JAVASCRIPT'
+				}],
+				['preview-foto2.png',
+				'preview-link2.jpg',
+				{
+					url: 'demo.html', 
+					title: 'Сайт школы онлайн oбразования',
+					techn: 'HTML , CSS, JAVASCRIPT'
+				}],
+				['preview-foto3.png',
+				'preview-link3.jpg',
+				{
+					url: 'demo.html', 
+					title: 'Сайт школы онлайн oбразования',
+					techn: 'HTML , CSS, JAVASCRIPT'
+				}]
+			]
+		.galery__info
+			.galery__work-title
+				.galery__work-title-wrap
+					.galery__work-title-text #{works[1][2].title}
+			.galery__work-techn
+				.galery__techn-wrap
+					.galery__techn-text #{works[1][2].techn}
+			.galery__work-link
+				a(href=`${works[1][2].url}`).galery__link
+					.galery__icon-block
+						+icon('link', 'galery__link-icon')
+					span Посмотреть сайт
+		.galery__preview
+			+image(works[1][0], 'Фото превью сайта', 'galery__image')
+		.galery__slider-links
+			a.galery__prev
+				+image(works[0][1], '', 'galery__link-img-prev')
+			a.galery__next
+				+image(works[2][1], '', 'galery__link-img-next')
+
+	section.reviews
+		h2.title.reviews__title
+			span.reviews__title-text Что обо мне
+			span говорят
+		ul.reviews__list
+			li.reviews__item
+				.review
+					.review__content
+						p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+					.review__author
+						.review__author-foto
+							+image('foto-rev1.jpg', 'Фото автора отзыва', 'review__image')
+						.review__author-name Ковальчук Дмитрий
+						.review__author-position основатель Loftschool
+			li.reviews__item
+				.review
+					.review__content
+						p Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+					.review__author
+						.review__author-foto
+							+image('foto-rev2.jpg', 'Фото автора отзыва', 'review__image')
+						.review__author-name Сабанцев Владимир
+						.review__author-position преподаватель
+		.review__form
+			form(action="#" method="post" id='review-form').review-form
+				h3.subtitle.review-form__subtitle
+					span.review-form__title-text Связаться со мной
+				label(for='name').visually-hidden Имя
+				input(type='text' id='name' name="name" placeholder="Имя").review-form__input-txt
+				label(for='name').visually-hidden Email
+				input(type='email' id='mail' name="mail" placeholder="Email").review-form__input-txt
+				label(for='comment').visually-hidden Ваше сообщение
+				textarea(id='comment' name="comment" placeholder="Ваше сообщение").review-form__textarea
+				button(type='submit').review-form__btn Отправить
+				button(type='reset').review-form__btn-res Очистить
+		a(href='#prev').reviews__link-up
+			+icon('portf_arrow_up', 'header__link-icon')(width='26' height='16')
+
+block footer
+	include ../common/footer.pug

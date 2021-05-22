@@ -1,6 +1,25 @@
 extends ../auth.layout.pug
 
+
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+	h1.visually-hidden Виталий Ушачёв
+		span Личный сайт веб разработчика
+	button(type='button').auth-btn Авторизоваться
+	.welcome
+		include ../common/author.pug
+		+socials('', 'welcome__socials')(width='30' height='26')
+		-
+			var menuItems = [
+				{
+					name: 'Мои работы',
+					url: 'works.html'
+				},{
+					name: 'Обо мне',
+					url: 'about.html'
+				},{
+					name: 'Блог',
+					url: 'blog.html'
+				}
+			]
+		+nav('welcome', menuItems)
+	small.copy © Виталий Ушачёв | создано с любовью в LoftSchool | 2018
